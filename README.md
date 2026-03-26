@@ -1,2 +1,0 @@
-# stickerology
-Stickerology
