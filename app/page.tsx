@@ -39,6 +39,7 @@ export default function Home() {
     priority
   />
 </div>
+          </div>
 
           <nav className="hidden items-center gap-8 text-sm font-medium text-gray-700 md:flex">
             <a href="#featured" className="transition hover:text-black">
