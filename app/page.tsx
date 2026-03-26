@@ -175,50 +175,60 @@ export default function Home() {
           </button>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-          {Array.from({ length: 8 }).map((_, i) => (
-            <article
-              key={i}
-              className="group overflow-hidden rounded-[1.75rem] border border-neutral-200 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(0,0,0,0.08)]"
-            >
-              <div className="relative border-b border-neutral-200 bg-neutral-50 p-4">
-                <div className="absolute left-4 top-4 rounded-full bg-[#BC2229] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
-                  New
-                </div>
-                <div className="flex h-56 items-center justify-center rounded-[1.25rem] border border-neutral-200 bg-white">
-                  <span className="text-neutral-400">Image</span>
-                </div>
-              </div>
-
-              <div className="p-5">
-                <div className="mb-3 flex items-center justify-between gap-3">
-                  <span className="rounded-full bg-[#BC2229]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#BC2229]">
-                    Featured
-                  </span>
-                  <span className="text-xs font-medium text-neutral-400">
-                    Placeholder
-                  </span>
+        <div className="mt-12">
+          <div className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <article
+                key={i}
+                className="group min-w-[85%] snap-start overflow-hidden rounded-[1.75rem] border border-neutral-200 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(0,0,0,0.08)] sm:min-w-[48%] xl:min-w-[calc(25%-18px)]"
+              >
+                <div className="border-b border-neutral-200 bg-neutral-50 p-4">
+                  <div className="flex h-56 items-center justify-center rounded-[1.25rem] border border-neutral-200 bg-white">
+                    <span className="text-neutral-400">Image</span>
+                  </div>
                 </div>
 
-                <h3 className="text-lg font-bold tracking-tight text-neutral-950">
-                  Product Placeholder #{i + 1}
-                </h3>
+                <div className="p-5">
+                  <div className="mb-3 flex items-center justify-between gap-3">
+                    <span className="rounded-full bg-[#BC2229]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#BC2229]">
+                      Featured
+                    </span>
+                    <span className="text-xs font-medium text-neutral-400">
+                      Placeholder
+                    </span>
+                  </div>
 
-                <p className="mt-2 text-sm leading-6 text-neutral-500">
-                  Product description placeholder
-                </p>
+                  <h3 className="text-lg font-bold tracking-tight text-neutral-950">
+                    Product Placeholder #{i + 1}
+                  </h3>
 
-                <div className="mt-6 flex items-center justify-between">
-                  <span className="text-base font-bold text-neutral-950">
-                    Price Placeholder
-                  </span>
-                  <button className="rounded-full bg-neutral-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#BC2229]">
-                    Add
-                  </button>
+                  <p className="mt-2 text-sm leading-6 text-neutral-500">
+                    Product description placeholder
+                  </p>
+
+                  <div className="mt-6 flex items-center justify-between">
+                    <span className="text-base font-bold text-neutral-950">
+                      Price Placeholder
+                    </span>
+                    <button className="rounded-full bg-neutral-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#BC2229]">
+                      Add
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-6 hidden items-center justify-center gap-2 xl:flex">
+            {Array.from({ length: 2 }).map((_, i) => (
+              <span
+                key={i}
+                className={`h-2.5 rounded-full ${
+                  i === 0 ? "w-8 bg-[#BC2229]" : "w-2.5 bg-neutral-300"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
