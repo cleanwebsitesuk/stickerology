@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   const categories = ["Warning", "Prohibition", "Custom", "Business"];
   const footerSections = [
@@ -28,9 +30,15 @@ export default function Home() {
       <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
           <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gray-900 text-sm font-bold text-white">
-              S
-            </div>
+<div className="relative h-11 w-11">
+  <Image
+    src="/logo.png" // put your logo in /public
+    alt="Stickerology Logo"
+    fill
+    className="object-contain"
+    priority
+  />
+</div>
             <div>
               <p className="text-lg font-bold tracking-tight">Stickerology</p>
               <p className="text-sm text-gray-500">
