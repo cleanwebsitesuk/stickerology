@@ -30,9 +30,9 @@ export default function Home() {
       <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
           <div className="flex items-center gap-3">
-<div className="relative h-11 w-11">
+<div className="relative h-12 w-40">
   <Image
-    src="/logo.png" // put your logo in /public
+    src="/logo.png"
     alt="Stickerology Logo"
     fill
     className="object-contain"
