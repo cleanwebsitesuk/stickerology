@@ -39,13 +39,6 @@ export default function Home() {
     priority
   />
 </div>
-            <div>
-              <p className="text-lg font-bold tracking-tight">Stickerology</p>
-              <p className="text-sm text-gray-500">
-                Safety & custom sticker specialists
-              </p>
-            </div>
-          </div>
 
           <nav className="hidden items-center gap-8 text-sm font-medium text-gray-700 md:flex">
             <a href="#featured" className="transition hover:text-black">
