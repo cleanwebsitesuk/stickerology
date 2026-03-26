@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Stickerology",
   description: "World-class stickers",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
