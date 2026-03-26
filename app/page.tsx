@@ -24,9 +24,9 @@ export default function Home() {
   ];
 
   return (
-    <main className={`${inter.className} min-h-screen bg-stone-50 text-neutral-950`}>
+    <main className={`${inter.className} min-h-screen bg-[#f5f5f2] text-neutral-950`}>
       {/* HEADER */}
-      <header className="sticky top-0 z-50 border-b border-black/5 bg-stone-50/90 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-black/5 bg-[#f5f5f2]/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
           <div className="flex items-center gap-4">
             <Image
@@ -40,25 +40,25 @@ export default function Home() {
           </div>
 
           <nav className="hidden items-center gap-8 text-sm font-medium text-neutral-600 md:flex">
-            <a href="#featured" className="transition hover:text-[#BC2229]">
+            <a href="#featured" className="transition hover:text-neutral-950">
               Featured
             </a>
-            <a href="#categories" className="transition hover:text-[#BC2229]">
+            <a href="#categories" className="transition hover:text-neutral-950">
               Categories
             </a>
-            <a href="#gallery" className="transition hover:text-[#BC2229]">
+            <a href="#gallery" className="transition hover:text-neutral-950">
               Gallery
             </a>
-            <a href="#why-us" className="transition hover:text-[#BC2229]">
+            <a href="#why-us" className="transition hover:text-neutral-950">
               Why Us
             </a>
           </nav>
 
           <div className="flex items-center gap-3">
-            <button className="hidden rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-medium text-neutral-700 transition hover:border-[#BC2229]/30 hover:text-[#BC2229] md:inline-flex">
+            <button className="hidden rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-medium text-neutral-700 transition hover:border-neutral-400 hover:text-neutral-950 md:inline-flex">
               Browse
             </button>
-            <button className="inline-flex rounded-full bg-neutral-950 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#BC2229]">
+            <button className="inline-flex rounded-full bg-neutral-950 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-neutral-800">
               Shop Now
             </button>
           </div>
@@ -66,11 +66,11 @@ export default function Home() {
       </header>
 
       {/* HERO */}
-      <section className="border-b border-black/5 bg-white">
+      <section className="border-b border-black/5 bg-[#f8f8f6]">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 md:grid-cols-[1.05fr_0.95fr] md:items-center md:py-20 lg:px-8 lg:py-24">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#BC2229]/10 bg-[#BC2229]/5 px-4 py-2 text-sm font-medium text-neutral-700">
-              <span className="h-2 w-2 rounded-full bg-[#BC2229]" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-black/8 bg-white px-4 py-2 text-sm font-medium text-neutral-700">
+              <span className="h-2 w-2 rounded-full bg-neutral-950" />
               Trusted sticker solutions for business, vehicle, and site use
             </div>
 
@@ -86,22 +86,22 @@ export default function Home() {
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <button className="inline-flex items-center justify-center rounded-full bg-[#BC2229] px-6 py-3.5 font-semibold text-white transition hover:bg-[#a11c23]">
+              <button className="inline-flex items-center justify-center rounded-full bg-neutral-950 px-6 py-3.5 font-semibold text-white transition hover:bg-neutral-800">
                 Shop Now
               </button>
-              <button className="inline-flex items-center justify-center rounded-full border border-neutral-300 bg-white px-6 py-3.5 font-semibold text-neutral-800 transition hover:border-neutral-950 hover:bg-neutral-50">
+              <button className="inline-flex items-center justify-center rounded-full border border-neutral-300 bg-white px-6 py-3.5 font-semibold text-neutral-800 transition hover:border-neutral-400 hover:bg-neutral-50">
                 Browse Categories
               </button>
             </div>
 
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
-              <div className="rounded-2xl border border-black/5 bg-stone-50 p-5">
+              <div className="rounded-2xl border border-black/5 bg-white p-5">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-400">
                   Material
                 </p>
                 <p className="mt-2 text-sm font-semibold text-neutral-900">Premium vinyl</p>
               </div>
-              <div className="rounded-2xl border border-black/5 bg-stone-50 p-5">
+              <div className="rounded-2xl border border-black/5 bg-white p-5">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-400">
                   Finish
                 </p>
@@ -109,7 +109,7 @@ export default function Home() {
                   Clean, professional look
                 </p>
               </div>
-              <div className="rounded-2xl border border-black/5 bg-stone-50 p-5">
+              <div className="rounded-2xl border border-black/5 bg-white p-5">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-400">
                   Use
                 </p>
@@ -121,9 +121,9 @@ export default function Home() {
           </div>
 
           <div className="relative">
-            <div className="rounded-[2rem] border border-black/5 bg-stone-100 p-3 shadow-[0_24px_80px_rgba(0,0,0,0.08)] md:p-4">
+            <div className="rounded-[2rem] border border-black/5 bg-[#ecece8] p-3 shadow-[0_20px_60px_rgba(0,0,0,0.06)] md:p-4">
               <div className="rounded-[1.6rem] border border-black/5 bg-white p-4">
-                <div className="mb-4 flex items-center justify-between rounded-2xl border border-neutral-200 bg-stone-50 px-4 py-3">
+                <div className="mb-4 flex items-center justify-between rounded-2xl border border-neutral-200 bg-[#f7f7f4] px-4 py-3">
                   <div>
                     <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-400">
                       Showcase
@@ -132,12 +132,12 @@ export default function Home() {
                       Hero Image Placeholder
                     </p>
                   </div>
-                  <span className="rounded-full bg-[#BC2229]/10 px-3 py-1 text-xs font-semibold text-[#BC2229]">
+                  <span className="rounded-full bg-neutral-100 px-3 py-1 text-xs font-semibold text-neutral-700">
                     Preview
                   </span>
                 </div>
 
-                <div className="flex h-80 items-center justify-center rounded-[1.5rem] border border-dashed border-neutral-300 bg-stone-50 md:h-[31rem]">
+                <div className="flex h-80 items-center justify-center rounded-[1.5rem] border border-dashed border-neutral-300 bg-[#f8f8f6] md:h-[31rem]">
                   <span className="text-lg font-medium text-neutral-400">
                     Hero Image Placeholder
                   </span>
@@ -155,7 +155,7 @@ export default function Home() {
       >
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#BC2229]">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-neutral-500">
               Featured Collection
             </p>
             <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.04em] md:text-5xl">
@@ -168,7 +168,7 @@ export default function Home() {
             </p>
           </div>
 
-          <button className="inline-flex w-fit items-center rounded-full border border-neutral-300 bg-white px-5 py-2.5 text-sm font-semibold text-neutral-700 transition hover:border-[#BC2229]/40 hover:text-[#BC2229]">
+          <button className="inline-flex w-fit items-center rounded-full border border-neutral-300 bg-white px-5 py-2.5 text-sm font-semibold text-neutral-700 transition hover:border-neutral-400 hover:text-neutral-950">
             View All
           </button>
         </div>
@@ -177,9 +177,9 @@ export default function Home() {
           {Array.from({ length: 8 }).map((_, i) => (
             <article
               key={i}
-              className="group overflow-hidden rounded-[1.75rem] border border-black/5 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(0,0,0,0.08)]"
+              className="group overflow-hidden rounded-[1.75rem] border border-black/5 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(0,0,0,0.06)]"
             >
-              <div className="relative border-b border-black/5 bg-stone-50 p-4">
+              <div className="relative border-b border-black/5 bg-[#f8f8f6] p-4">
                 <div className="absolute left-4 top-4 rounded-full bg-neutral-950 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
                   New
                 </div>
@@ -190,7 +190,7 @@ export default function Home() {
 
               <div className="p-5">
                 <div className="mb-3 flex items-center justify-between gap-3">
-                  <span className="rounded-full bg-[#BC2229]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#BC2229]">
+                  <span className="rounded-full bg-neutral-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-neutral-700">
                     Featured
                   </span>
                   <span className="text-xs font-medium text-neutral-400">
@@ -210,7 +210,7 @@ export default function Home() {
                   <span className="text-base font-bold text-neutral-950">
                     Price Placeholder
                   </span>
-                  <button className="rounded-full bg-neutral-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#BC2229]">
+                  <button className="rounded-full bg-neutral-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-neutral-800">
                     Add
                   </button>
                 </div>
@@ -223,9 +223,9 @@ export default function Home() {
       {/* CATEGORIES */}
       <section id="categories" className="py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="rounded-[2rem] border border-black/5 bg-white p-8 shadow-[0_16px_50px_rgba(0,0,0,0.04)] md:p-10">
+          <div className="rounded-[2rem] border border-black/5 bg-white p-8 shadow-[0_14px_40px_rgba(0,0,0,0.04)] md:p-10">
             <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#BC2229]">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-neutral-500">
                 Browse
               </p>
               <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.04em] md:text-5xl">
@@ -241,9 +241,9 @@ export default function Home() {
               {categories.map((cat, index) => (
                 <div
                   key={cat}
-                  className="group rounded-[1.5rem] border border-neutral-200 bg-stone-50 p-6 transition duration-300 hover:-translate-y-1 hover:border-[#BC2229]/20 hover:bg-white hover:shadow-[0_18px_40px_rgba(0,0,0,0.06)]"
+                  className="group rounded-[1.5rem] border border-neutral-200 bg-[#f8f8f6] p-6 transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_16px_36px_rgba(0,0,0,0.05)]"
                 >
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-base font-extrabold text-[#BC2229] ring-1 ring-inset ring-[#BC2229]/10">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-black/5 bg-white text-base font-extrabold text-neutral-700">
                     0{index + 1}
                   </div>
 
@@ -254,7 +254,7 @@ export default function Home() {
                         Category placeholder
                       </p>
                     </div>
-                    <span className="mt-1 text-neutral-300 transition group-hover:translate-x-1 group-hover:text-[#BC2229]">
+                    <span className="mt-1 text-neutral-300 transition group-hover:translate-x-1 group-hover:text-neutral-500">
                       →
                     </span>
                   </div>
@@ -271,7 +271,7 @@ export default function Home() {
         className="mx-auto max-w-7xl px-6 py-20 md:py-24 lg:px-8"
       >
         <div className="mb-10 max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#BC2229]">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-neutral-500">
             Visual Showcase
           </p>
           <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.04em] md:text-5xl">
@@ -284,27 +284,27 @@ export default function Home() {
         </div>
 
         <div className="grid gap-4 md:grid-cols-12 md:grid-rows-2">
-          <div className="flex h-56 items-center justify-center overflow-hidden rounded-[1.75rem] border border-neutral-200 bg-white transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.06)] md:col-span-5 md:h-[420px] md:row-span-2">
+          <div className="flex h-56 items-center justify-center overflow-hidden rounded-[1.75rem] border border-neutral-200 bg-white transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.05)] md:col-span-5 md:h-[420px] md:row-span-2">
             <span className="text-neutral-500">Preview</span>
           </div>
 
-          <div className="flex h-44 items-center justify-center overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-stone-100 transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.06)] md:col-span-4 md:h-[202px]">
+          <div className="flex h-44 items-center justify-center overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-[#efefeb] transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.05)] md:col-span-4 md:h-[202px]">
             <span className="text-neutral-500">Preview</span>
           </div>
 
-          <div className="flex h-44 items-center justify-center overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-stone-100 transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.06)] md:col-span-3 md:h-[202px]">
+          <div className="flex h-44 items-center justify-center overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-[#efefeb] transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.05)] md:col-span-3 md:h-[202px]">
             <span className="text-neutral-500">Preview</span>
           </div>
 
-          <div className="flex h-44 items-center justify-center overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-stone-100 transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.06)] md:col-span-3 md:h-[202px]">
+          <div className="flex h-44 items-center justify-center overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-[#efefeb] transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.05)] md:col-span-3 md:h-[202px]">
             <span className="text-neutral-500">Preview</span>
           </div>
 
-          <div className="flex h-44 items-center justify-center overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-stone-100 transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.06)] md:col-span-4 md:h-[202px]">
+          <div className="flex h-44 items-center justify-center overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-[#efefeb] transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.05)] md:col-span-4 md:h-[202px]">
             <span className="text-neutral-500">Preview</span>
           </div>
 
-          <div className="flex h-44 items-center justify-center overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-stone-100 transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.06)] md:col-span-5 md:h-[202px]">
+          <div className="flex h-44 items-center justify-center overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-[#efefeb] transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.05)] md:col-span-5 md:h-[202px]">
             <span className="text-neutral-500">Preview</span>
           </div>
         </div>
@@ -313,12 +313,12 @@ export default function Home() {
       {/* WHY US */}
       <section
         id="why-us"
-        className="border-y border-black/5 bg-neutral-950 py-20 text-white md:py-24"
+        className="border-y border-black/5 bg-[#1f1f1d] py-20 text-white md:py-24"
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
             <div className="max-w-xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#f1b1b4]">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-neutral-400">
                 Why Choose Us
               </p>
               <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.04em] md:text-5xl">
@@ -332,7 +332,7 @@ export default function Home() {
 
             <div className="grid gap-6 md:grid-cols-3">
               <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-8">
-                <div className="mb-5 h-1.5 w-14 rounded-full bg-[#BC2229]" />
+                <div className="mb-5 h-1.5 w-14 rounded-full bg-neutral-500" />
                 <h3 className="text-xl font-bold">Durable Materials</h3>
                 <p className="mt-3 leading-7 text-neutral-400">
                   Waterproof, weather-resistant vinyl designed to maintain
@@ -341,7 +341,7 @@ export default function Home() {
               </div>
 
               <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-8">
-                <div className="mb-5 h-1.5 w-14 rounded-full bg-[#BC2229]" />
+                <div className="mb-5 h-1.5 w-14 rounded-full bg-neutral-500" />
                 <h3 className="text-xl font-bold">Fast Dispatch</h3>
                 <p className="mt-3 leading-7 text-neutral-400">
                   Streamlined fulfilment focused on quick turnaround and reliable
@@ -350,7 +350,7 @@ export default function Home() {
               </div>
 
               <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-8">
-                <div className="mb-5 h-1.5 w-14 rounded-full bg-[#BC2229]" />
+                <div className="mb-5 h-1.5 w-14 rounded-full bg-neutral-500" />
                 <h3 className="text-xl font-bold">Custom Orders</h3>
                 <p className="mt-3 leading-7 text-neutral-400">
                   Flexible support for tailored sticker requirements across
@@ -364,9 +364,9 @@ export default function Home() {
 
       {/* CTA */}
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-24 lg:px-8">
-        <div className="overflow-hidden rounded-[2rem] border border-black/5 bg-white p-10 shadow-[0_20px_60px_rgba(0,0,0,0.05)] md:p-14">
+        <div className="overflow-hidden rounded-[2rem] border border-black/5 bg-white p-10 shadow-[0_20px_60px_rgba(0,0,0,0.04)] md:p-14">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#BC2229]">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-neutral-500">
               Custom Enquiries
             </p>
             <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.04em] md:text-5xl">
@@ -377,10 +377,10 @@ export default function Home() {
               design requirements.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <button className="inline-flex rounded-full bg-[#BC2229] px-6 py-3.5 font-semibold text-white transition hover:bg-[#a11c23]">
+              <button className="inline-flex rounded-full bg-neutral-950 px-6 py-3.5 font-semibold text-white transition hover:bg-neutral-800">
                 Request a Quote
               </button>
-              <button className="inline-flex rounded-full border border-neutral-300 px-6 py-3.5 font-semibold text-neutral-700 transition hover:border-neutral-950 hover:text-neutral-950">
+              <button className="inline-flex rounded-full border border-neutral-300 px-6 py-3.5 font-semibold text-neutral-700 transition hover:border-neutral-400 hover:text-neutral-950">
                 Contact Us
               </button>
             </div>
@@ -389,7 +389,7 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-black/5 bg-white">
+      <footer className="border-t border-black/5 bg-[#f8f8f6]">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-[1.3fr_1fr_1fr_1fr] lg:px-8">
           <div className="max-w-sm">
             <div className="flex items-center gap-4">
@@ -420,7 +420,7 @@ export default function Home() {
               <ul className="mt-4 space-y-3 text-neutral-600">
                 {section.links.map((link) => (
                   <li key={link}>
-                    <a href="#" className="transition hover:text-[#BC2229]">
+                    <a href="#" className="transition hover:text-neutral-950">
                       {link}
                     </a>
                   </li>
