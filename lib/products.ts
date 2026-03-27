@@ -9,6 +9,7 @@ export type Product = {
   price: number;
   category: string;
   quantity: number;
+  image: string;
 };
 
 function slugify(text: string) {
@@ -18,6 +19,12 @@ function slugify(text: string) {
     .replace(/\s+/g, "-")
     .replace(/-+/g, "-")
     .trim();
+}
+
+function getImageFromTitle(title: string) {
+  return `https://source.unsplash.com/600x600/?${encodeURIComponent(
+    title + " sticker"
+  )}`;
 }
 
 function isAllowedSticker(row: Record<string, string>) {
@@ -81,6 +88,7 @@ export function getProducts(): Product[] {
     .filter(isAllowedSticker)
     .map((row, index) => {
       const title = row["Title"] || "Untitled product";
+
       const price =
         Number(row["Start price"]) ||
         Number(row["Current price"]) ||
@@ -94,6 +102,7 @@ export function getProducts(): Product[] {
         price,
         category: row["eBay category 1 name"] || "Sticker",
         quantity: Number(row["Available quantity"] || 0),
+        image: getImageFromTitle(title),
       };
     })
     .filter((product) => product.price > 0);
