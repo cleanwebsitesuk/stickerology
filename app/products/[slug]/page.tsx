@@ -26,11 +26,11 @@ export default async function ProductPage({ params }: Props) {
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-start">
           <div className="rounded-[2rem] border border-neutral-200 bg-neutral-50 p-4 shadow-[0_14px_40px_rgba(0,0,0,0.05)]">
-            <div className="flex h-[420px] items-center justify-center rounded-[1.5rem] border border-neutral-200 bg-white">
-              <span className="text-lg font-medium text-neutral-400">
-                Product image coming soon
-              </span>
-            </div>
+            <img
+              src={product.image}
+              alt={product.title}
+              className="h-[420px] w-full object-cover rounded-[1.5rem]"
+            />
           </div>
 
           <div>
@@ -75,8 +75,8 @@ export default async function ProductPage({ params }: Props) {
 
             <div className="mt-8">
               <Link
-                href={`/checkout?title=${encodeURIComponent(product.title)}&price=${product.price}`}
-                className="inline-flex items-center justify-center rounded-full bg-[#BC2229] px-6 py-3.5 font-semibold text-white transition hover:bg-[#a61d24]"
+                href={`/checkout?id=${product.id}`}
+                className="inline-flex items-center justify-center rounded-full bg-[#BC2229] px-6 py-3.5 font-semibold text-white transition hover:scale-105 hover:bg-[#a61d24]"
               >
                 Buy Now
               </Link>
