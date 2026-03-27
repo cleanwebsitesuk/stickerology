@@ -62,9 +62,11 @@ export default function ShopPage() {
               >
                 <div className="border-b border-neutral-200 bg-neutral-50 p-4">
                   <div className="flex h-56 items-center justify-center rounded-[1.25rem] border border-neutral-200 bg-white">
-                    <span className="text-sm font-medium text-neutral-400">
-                      Image coming soon
-                    </span>
+<img
+  src={product.image}
+  alt={product.title}
+  className="h-56 w-full object-cover rounded-[1.25rem] transition group-hover:scale-105"
+/>
                   </div>
                 </div>
 
