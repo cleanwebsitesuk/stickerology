@@ -177,36 +177,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      <section className="border-y border-neutral-800 bg-neutral-950 py-20 text-white md:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-8">
-              <div className="mb-5 h-1.5 w-14 rounded-full bg-[#BC2229]" />
-              <h3 className="text-xl font-bold">Durable materials</h3>
-              <p className="mt-3 leading-7 text-neutral-400">
-                Waterproof, weather-resistant vinyl designed for regular use.
-              </p>
-            </div>
-
-            <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-8">
-              <div className="mb-5 h-1.5 w-14 rounded-full bg-[#BC2229]" />
-              <h3 className="text-xl font-bold">Clear product pages</h3>
-              <p className="mt-3 leading-7 text-neutral-400">
-                Simple stock, price, and quantity controls to reduce friction.
-              </p>
-            </div>
-
-            <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-8">
-              <div className="mb-5 h-1.5 w-14 rounded-full bg-[#BC2229]" />
-              <h3 className="text-xl font-bold">Fast checkout flow</h3>
-              <p className="mt-3 leading-7 text-neutral-400">
-                Cart and checkout structure ready for PayPal integration.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
