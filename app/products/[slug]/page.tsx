@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProductBySlug } from "@/lib/products";
+import ProductActions from "@/components/product-actions";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -13,6 +14,8 @@ export default async function ProductPage({ params }: Props) {
   if (!product) {
     notFound();
   }
+
+  const outOfStock = product.quantity <= 0;
 
   return (
     <main className="min-h-screen bg-white text-neutral-950">
@@ -29,7 +32,7 @@ export default async function ProductPage({ params }: Props) {
             <img
               src={product.image}
               alt={product.title}
-              className="h-[420px] w-full object-cover rounded-[1.5rem]"
+              className="h-[420px] w-full rounded-[1.5rem] object-cover"
             />
           </div>
 
@@ -61,8 +64,12 @@ export default async function ProductPage({ params }: Props) {
                   <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-400">
                     Available Quantity
                   </p>
-                  <p className="mt-2 text-sm font-semibold text-neutral-900">
-                    {product.quantity}
+                  <p
+                    className={`mt-2 text-sm font-semibold ${
+                      outOfStock ? "text-red-500" : "text-neutral-900"
+                    }`}
+                  >
+                    {outOfStock ? "Out of stock" : product.quantity}
                   </p>
                 </div>
               </div>
@@ -73,14 +80,16 @@ export default async function ProductPage({ params }: Props) {
               durability. Suitable for vehicle and bike applications.
             </p>
 
-            <div className="mt-8">
-              <Link
-                href={`/checkout?id=${product.id}`}
-                className="inline-flex items-center justify-center rounded-full bg-[#BC2229] px-6 py-3.5 font-semibold text-white transition hover:scale-105 hover:bg-[#a61d24]"
-              >
-                Buy Now
-              </Link>
+            <div className="mt-6 rounded-[1.5rem] border border-neutral-200 bg-white p-5">
+              <ul className="space-y-2 text-sm text-neutral-600">
+                <li>• Durable vinyl material</li>
+                <li>• Suitable for vehicles and bikes</li>
+                <li>• Clean finish with strong visual impact</li>
+                <li>• Easy to order and ready for checkout</li>
+              </ul>
             </div>
+
+            <ProductActions product={product} />
           </div>
         </div>
       </section>
