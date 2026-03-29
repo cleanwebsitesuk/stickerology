@@ -1,10 +1,38 @@
 "use client";
 
 import Link from "next/link";
+import { useMemo, useState } from "react";
 import { useCart } from "@/context/cart-context";
+
+const SHIPPING_COST = 3.99;
 
 export default function CheckoutPageClient() {
   const { items, subtotal, isHydrated } = useCart();
+
+  const [form, setForm] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    address1: "",
+    address2: "",
+    city: "",
+    postcode: "",
+    country: "United Kingdom",
+  });
+
+  const shipping = items.length > 0 ? SHIPPING_COST : 0;
+  const total = subtotal + shipping;
+
+  const isFormValid = useMemo(() => {
+    return (
+      form.fullName.trim() &&
+      form.email.trim() &&
+      form.address1.trim() &&
+      form.city.trim() &&
+      form.postcode.trim() &&
+      form.country.trim()
+    );
+  }, [form]);
 
   return (
     <main className="min-h-screen bg-white text-neutral-950">
@@ -14,28 +42,21 @@ export default function CheckoutPageClient() {
             Checkout
           </p>
           <h1 className="mt-3 text-4xl font-extrabold tracking-[-0.04em] md:text-5xl">
-            Review Your Order
+            Complete Your Order
           </h1>
           <p className="mt-4 text-lg leading-8 text-neutral-600">
-            This is now connected to your cart. Next we will add customer
-            details and full PayPal payment.
+            Enter delivery details and review your items before payment.
           </p>
         </div>
 
         {!isHydrated ? (
           <div className="mt-10 rounded-[2rem] border border-neutral-200 bg-neutral-50 p-10 text-center">
-            <p className="text-lg font-semibold text-neutral-900">
-              Loading checkout...
-            </p>
+            <p className="text-lg font-semibold text-neutral-900">Loading checkout...</p>
           </div>
         ) : items.length === 0 ? (
           <div className="mt-10 rounded-[2rem] border border-neutral-200 bg-neutral-50 p-10 text-center">
-            <p className="text-lg font-semibold text-neutral-900">
-              Your cart is empty
-            </p>
-            <p className="mt-2 text-neutral-600">
-              Add products before continuing to checkout.
-            </p>
+            <p className="text-lg font-semibold text-neutral-900">Your cart is empty</p>
+            <p className="mt-2 text-neutral-600">Add products before checking out.</p>
 
             <Link
               href="/shop"
@@ -47,51 +68,105 @@ export default function CheckoutPageClient() {
         ) : (
           <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
             <div className="rounded-[2rem] border border-neutral-200 bg-white p-8 shadow-[0_20px_60px_rgba(0,0,0,0.05)]">
-              <h2 className="text-2xl font-bold text-neutral-950">
-                Customer details
-              </h2>
-              <p className="mt-2 text-neutral-600">
-                In the next batch, this section will become a full checkout form.
-              </p>
+              <div className="mb-8 flex items-center justify-between gap-4">
+                <h2 className="text-2xl font-bold text-neutral-950">
+                  Delivery Details
+                </h2>
+                <span className="rounded-full bg-neutral-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-neutral-500">
+                  Secure checkout
+                </span>
+              </div>
 
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-4 sm:grid-cols-2">
                 <input
+                  value={form.fullName}
+                  onChange={(e) =>
+                    setForm((current) => ({ ...current, fullName: e.target.value }))
+                  }
                   placeholder="Full name"
                   className="rounded-2xl border border-neutral-300 px-4 py-3 outline-none transition focus:border-[#BC2229]"
                 />
                 <input
+                  value={form.email}
+                  onChange={(e) =>
+                    setForm((current) => ({ ...current, email: e.target.value }))
+                  }
                   placeholder="Email address"
+                  type="email"
                   className="rounded-2xl border border-neutral-300 px-4 py-3 outline-none transition focus:border-[#BC2229]"
                 />
                 <input
+                  value={form.phone}
+                  onChange={(e) =>
+                    setForm((current) => ({ ...current, phone: e.target.value }))
+                  }
                   placeholder="Phone number"
                   className="rounded-2xl border border-neutral-300 px-4 py-3 outline-none transition focus:border-[#BC2229] sm:col-span-2"
                 />
                 <input
+                  value={form.address1}
+                  onChange={(e) =>
+                    setForm((current) => ({ ...current, address1: e.target.value }))
+                  }
                   placeholder="Address line 1"
                   className="rounded-2xl border border-neutral-300 px-4 py-3 outline-none transition focus:border-[#BC2229] sm:col-span-2"
                 />
                 <input
+                  value={form.address2}
+                  onChange={(e) =>
+                    setForm((current) => ({ ...current, address2: e.target.value }))
+                  }
+                  placeholder="Address line 2"
+                  className="rounded-2xl border border-neutral-300 px-4 py-3 outline-none transition focus:border-[#BC2229] sm:col-span-2"
+                />
+                <input
+                  value={form.city}
+                  onChange={(e) =>
+                    setForm((current) => ({ ...current, city: e.target.value }))
+                  }
                   placeholder="City"
                   className="rounded-2xl border border-neutral-300 px-4 py-3 outline-none transition focus:border-[#BC2229]"
                 />
                 <input
+                  value={form.postcode}
+                  onChange={(e) =>
+                    setForm((current) => ({ ...current, postcode: e.target.value }))
+                  }
                   placeholder="Postcode"
                   className="rounded-2xl border border-neutral-300 px-4 py-3 outline-none transition focus:border-[#BC2229]"
                 />
+                <input
+                  value={form.country}
+                  onChange={(e) =>
+                    setForm((current) => ({ ...current, country: e.target.value }))
+                  }
+                  placeholder="Country"
+                  className="rounded-2xl border border-neutral-300 px-4 py-3 outline-none transition focus:border-[#BC2229] sm:col-span-2"
+                />
               </div>
 
-              <div className="mt-8 rounded-[1.5rem] border border-dashed border-neutral-300 bg-neutral-50 p-8 text-center">
-                <p className="text-sm font-medium text-neutral-500">
-                  PayPal integration goes here in the next batch
-                </p>
+              <div className="mt-8 rounded-[1.5rem] border border-dashed border-neutral-300 bg-neutral-50 p-8">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-neutral-900">Payment</p>
+                    <p className="mt-1 text-sm text-neutral-500">
+                      PayPal button goes here next
+                    </p>
+                  </div>
+
+                  <button
+                    type="button"
+                    disabled={!isFormValid}
+                    className="inline-flex items-center justify-center rounded-full bg-[#BC2229] px-6 py-3 font-semibold text-white opacity-100 transition disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    Continue to Payment
+                  </button>
+                </div>
               </div>
             </div>
 
             <aside className="h-fit rounded-[2rem] border border-neutral-200 bg-neutral-50 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.04)]">
-              <h2 className="text-xl font-bold text-neutral-950">
-                Order Summary
-              </h2>
+              <h2 className="text-xl font-bold text-neutral-950">Order Summary</h2>
 
               <div className="mt-6 space-y-4">
                 {items.map((item) => (
@@ -132,7 +207,7 @@ export default function CheckoutPageClient() {
                 <div className="flex items-center justify-between text-neutral-600">
                   <span>Shipping</span>
                   <span className="font-semibold text-neutral-950">
-                    To be calculated
+                    £{shipping.toFixed(2)}
                   </span>
                 </div>
 
@@ -141,9 +216,14 @@ export default function CheckoutPageClient() {
                     Total
                   </span>
                   <span className="text-2xl font-extrabold text-neutral-950">
-                    £{subtotal.toFixed(2)}
+                    £{total.toFixed(2)}
                   </span>
                 </div>
+              </div>
+
+              <div className="mt-6 rounded-[1.5rem] border border-neutral-200 bg-white p-4 text-sm text-neutral-600">
+                <p className="font-semibold text-neutral-900">Delivery</p>
+                <p className="mt-1">Standard shipping calculated at a flat rate.</p>
               </div>
             </aside>
           </div>
