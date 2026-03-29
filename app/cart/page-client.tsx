@@ -12,30 +12,25 @@ export default function CartPageClient() {
       <section className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#BC2229]">
-            Your Basket
+            Cart
           </p>
           <h1 className="mt-3 text-4xl font-extrabold tracking-[-0.04em] md:text-5xl">
             Shopping Cart
           </h1>
           <p className="mt-4 text-lg leading-8 text-neutral-600">
-            Review your items, adjust quantities, and continue to checkout when
-            you&apos;re ready.
+            Review items, change quantities, and continue to checkout.
           </p>
         </div>
 
         {!isHydrated ? (
           <div className="mt-10 rounded-[2rem] border border-neutral-200 bg-neutral-50 p-10 text-center">
-            <p className="text-lg font-semibold text-neutral-900">
-              Loading cart...
-            </p>
+            <p className="text-lg font-semibold text-neutral-900">Loading cart...</p>
           </div>
         ) : items.length === 0 ? (
           <div className="mt-10 rounded-[2rem] border border-neutral-200 bg-neutral-50 p-10 text-center">
-            <p className="text-lg font-semibold text-neutral-900">
-              Your cart is empty
-            </p>
+            <p className="text-lg font-semibold text-neutral-900">Your cart is empty</p>
             <p className="mt-2 text-neutral-600">
-              Browse the shop and add a few products to get started.
+              Add products from the shop to continue.
             </p>
 
             <Link
@@ -70,7 +65,7 @@ export default function CartPageClient() {
                             £{item.price.toFixed(2)} each
                           </p>
                           <p className="mt-1 text-sm text-neutral-500">
-                            In stock: {item.stock}
+                            Stock: {item.stock}
                           </p>
                         </div>
 
@@ -84,7 +79,9 @@ export default function CartPageClient() {
                           <button
                             type="button"
                             onClick={() =>
-                              updateQuantity(item.id, item.quantity - 1)
+                              item.quantity === 1
+                                ? removeItem(item.id)
+                                : updateQuantity(item.id, item.quantity - 1)
                             }
                             className="px-4 py-2 text-lg font-semibold text-neutral-700 transition hover:bg-neutral-50"
                           >
@@ -111,7 +108,7 @@ export default function CartPageClient() {
                           onClick={() => removeItem(item.id)}
                           className="text-sm font-semibold text-neutral-500 transition hover:text-[#BC2229]"
                         >
-                          Remove item
+                          Remove
                         </button>
                       </div>
                     </div>
@@ -129,9 +126,7 @@ export default function CartPageClient() {
             </div>
 
             <aside className="h-fit rounded-[2rem] border border-neutral-200 bg-neutral-50 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.04)]">
-              <h2 className="text-xl font-bold text-neutral-950">
-                Order Summary
-              </h2>
+              <h2 className="text-xl font-bold text-neutral-950">Order Summary</h2>
 
               <div className="mt-6 space-y-4">
                 <div className="flex items-center justify-between text-neutral-600">
@@ -143,9 +138,7 @@ export default function CartPageClient() {
 
                 <div className="flex items-center justify-between text-neutral-600">
                   <span>Shipping</span>
-                  <span className="font-semibold text-neutral-950">
-                    Calculated at checkout
-                  </span>
+                  <span className="font-semibold text-neutral-950">Calculated at checkout</span>
                 </div>
 
                 <div className="border-t border-neutral-200 pt-4">
@@ -164,7 +157,7 @@ export default function CartPageClient() {
                 href="/checkout"
                 className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-[#BC2229] px-6 py-3.5 font-semibold text-white transition hover:bg-[#a61d24]"
               >
-                Continue to Checkout
+                Checkout
               </Link>
 
               <Link
