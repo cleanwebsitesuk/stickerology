@@ -19,8 +19,8 @@ export default function ShopPage() {
             </h1>
 
             <p className="mt-5 max-w-2xl text-lg leading-8 text-neutral-600">
-              Browse our current collection of vehicle and bike sticker designs.
-              Clean, durable, and ready for everyday use.
+              Browse current vehicle and bike sticker designs with quick product
+              pages and direct cart access.
             </p>
           </div>
 
@@ -30,7 +30,7 @@ export default function ShopPage() {
                 Available Products
               </p>
               <p className="mt-1 text-lg font-bold text-neutral-950">
-                {products.length} items found
+                {products.length} items
               </p>
             </div>
 
@@ -47,12 +47,7 @@ export default function ShopPage() {
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         {products.length === 0 ? (
           <div className="rounded-[2rem] border border-neutral-200 bg-neutral-50 p-10 text-center">
-            <p className="text-lg font-semibold text-neutral-900">
-              No products found
-            </p>
-            <p className="mt-2 text-neutral-600">
-              Check your CSV filter or product data.
-            </p>
+            <p className="text-lg font-semibold text-neutral-900">No products found</p>
           </div>
         ) : (
           <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
@@ -82,12 +77,18 @@ export default function ShopPage() {
 
                       <span
                         className={`text-xs font-medium ${
-                          outOfStock ? "text-red-500" : "text-neutral-400"
+                          outOfStock
+                            ? "text-red-500"
+                            : product.quantity <= 3
+                            ? "text-amber-600"
+                            : "text-neutral-400"
                         }`}
                       >
                         {outOfStock
                           ? "Out of stock"
-                          : `Stock: ${product.quantity}`}
+                          : product.quantity <= 3
+                          ? `Only ${product.quantity} left`
+                          : `${product.quantity} in stock`}
                       </span>
                     </div>
 
@@ -96,7 +97,7 @@ export default function ShopPage() {
                     </h2>
 
                     <p className="mt-2 text-sm leading-6 text-neutral-500">
-                      High-quality sticker design ready for vehicle or bike use.
+                      Durable vinyl sticker for vehicle and bike applications.
                     </p>
 
                     <div className="mt-6 flex items-center justify-between gap-4">
@@ -105,12 +106,12 @@ export default function ShopPage() {
                       </span>
                     </div>
 
-                    <div className="mt-5 flex items-center gap-3">
+                    <div className="mt-5 grid grid-cols-2 gap-3">
                       <Link
                         href={`/products/${product.slug}`}
-                        className="inline-flex items-center rounded-full bg-neutral-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#BC2229]"
+                        className="inline-flex items-center justify-center rounded-full bg-neutral-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#BC2229]"
                       >
-                        View Product
+                        View
                       </Link>
 
                       <ShopAddButton product={product} />
