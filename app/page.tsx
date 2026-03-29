@@ -1,5 +1,6 @@
-import Image from "next/image";
+import Link from "next/link";
 import { Inter } from "next/font/google";
+import { getProducts } from "@/lib/products";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -7,65 +8,11 @@ const inter = Inter({
 });
 
 export default function Home() {
+  const products = getProducts().slice(0, 4);
   const categories = ["Warning", "Prohibition", "Custom", "Business"];
-  const footerSections = [
-    {
-      title: "Shop",
-      links: ["All Stickers", "Custom", "Best Sellers"],
-    },
-    {
-      title: "Company",
-      links: ["About", "Contact", "Shipping"],
-    },
-    {
-      title: "Legal",
-      links: ["Privacy", "Terms"],
-    },
-  ];
 
   return (
     <main className={`${inter.className} min-h-screen bg-white text-neutral-950`}>
-      {/* HEADER */}
-      <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-          <div className="flex items-center gap-4">
-            <Image
-              src="/logo.png"
-              alt="Stickerology Logo"
-              width={180}
-              height={60}
-              className="object-contain"
-              priority
-            />
-          </div>
-
-          <nav className="hidden items-center gap-8 text-sm font-medium text-neutral-600 md:flex">
-            <a href="#featured" className="transition hover:text-[#BC2229]">
-              Featured
-            </a>
-            <a href="#categories" className="transition hover:text-[#BC2229]">
-              Categories
-            </a>
-            <a href="#gallery" className="transition hover:text-[#BC2229]">
-              Gallery
-            </a>
-            <a href="#why-us" className="transition hover:text-[#BC2229]">
-              Why Us
-            </a>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <button className="hidden rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-medium text-neutral-700 transition hover:border-[#BC2229]/35 hover:text-[#BC2229] md:inline-flex">
-              Browse
-            </button>
-            <button className="inline-flex rounded-full bg-[#BC2229] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#a61d24]">
-              Shop Now
-            </button>
-          </div>
-        </div>
-      </header>
-
-      {/* HERO */}
       <section className="border-b border-neutral-200 bg-white">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 md:grid-cols-[1.05fr_0.95fr] md:items-center md:py-20 lg:px-8 lg:py-24">
           <div className="max-w-2xl">
@@ -76,7 +23,9 @@ export default function Home() {
 
             <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-[-0.04em] text-neutral-950 md:text-6xl">
               Professional Safety
-              <span className="mt-1 block text-neutral-500">& Custom Stickers</span>
+              <span className="mt-1 block text-neutral-500">
+                & Custom Stickers
+              </span>
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-8 text-neutral-600">
@@ -86,12 +35,18 @@ export default function Home() {
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <button className="inline-flex items-center justify-center rounded-full bg-[#BC2229] px-6 py-3.5 font-semibold text-white transition hover:bg-[#a61d24]">
+              <Link
+                href="/shop"
+                className="inline-flex items-center justify-center rounded-full bg-[#BC2229] px-6 py-3.5 font-semibold text-white transition hover:bg-[#a61d24]"
+              >
                 Shop Now
-              </button>
-              <button className="inline-flex items-center justify-center rounded-full border border-neutral-300 bg-white px-6 py-3.5 font-semibold text-neutral-800 transition hover:border-neutral-400 hover:bg-neutral-50">
+              </Link>
+              <Link
+                href="/shop"
+                className="inline-flex items-center justify-center rounded-full border border-neutral-300 bg-white px-6 py-3.5 font-semibold text-neutral-800 transition hover:border-neutral-400 hover:bg-neutral-50"
+              >
                 Browse Categories
-              </button>
+              </Link>
             </div>
 
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -128,20 +83,21 @@ export default function Home() {
                 <div className="mb-4 flex items-center justify-between rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-3">
                   <div>
                     <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-400">
-                      Showcase
+                      Storefront
                     </p>
                     <p className="mt-1 text-sm font-medium text-neutral-700">
-                      Hero Image Placeholder
+                      Browse products and order with ease
                     </p>
                   </div>
                   <span className="rounded-full bg-[#BC2229]/10 px-3 py-1 text-xs font-semibold text-[#BC2229]">
-                    Preview
+                    Live
                   </span>
                 </div>
 
-                <div className="flex h-80 items-center justify-center rounded-[1.5rem] border border-dashed border-neutral-300 bg-neutral-50 md:h-[31rem]">
+                <div className="flex h-80 items-center justify-center rounded-[1.5rem] border border-dashed border-neutral-300 bg-neutral-50 px-8 text-center md:h-[31rem]">
                   <span className="text-lg font-medium text-neutral-400">
-                    Hero Image Placeholder
+                    Replace this area later with your own brand image, product
+                    banner, or workshop photo.
                   </span>
                 </div>
               </div>
@@ -150,7 +106,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FEATURED */}
       <section
         id="featured"
         className="mx-auto max-w-7xl px-6 py-20 md:py-24 lg:px-8"
@@ -164,75 +119,70 @@ export default function Home() {
               Featured Stickers
             </h2>
             <p className="mt-4 text-neutral-600">
-              A polished featured section ready for real product data. All
-              placeholders remain intact so the content can be replaced cleanly
-              later.
+              A cleaner starting point for a real storefront using your current
+              product data.
             </p>
           </div>
 
-          <button className="inline-flex w-fit items-center rounded-full border border-neutral-300 bg-white px-5 py-2.5 text-sm font-semibold text-neutral-700 transition hover:border-[#BC2229]/35 hover:text-[#BC2229]">
+          <Link
+            href="/shop"
+            className="inline-flex w-fit items-center rounded-full border border-neutral-300 bg-white px-5 py-2.5 text-sm font-semibold text-neutral-700 transition hover:border-[#BC2229]/35 hover:text-[#BC2229]"
+          >
             View All
-          </button>
+          </Link>
         </div>
 
-        <div className="mt-12">
-          <div className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <article
-                key={i}
-                className="group min-w-[85%] snap-start overflow-hidden rounded-[1.75rem] border border-neutral-200 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(0,0,0,0.08)] sm:min-w-[48%] xl:min-w-[calc(25%-18px)]"
-              >
-                <div className="border-b border-neutral-200 bg-neutral-50 p-4">
-                  <div className="flex h-56 items-center justify-center rounded-[1.25rem] border border-neutral-200 bg-white">
-                    <span className="text-neutral-400">Image</span>
-                  </div>
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+          {products.map((product) => (
+            <article
+              key={product.id}
+              className="group overflow-hidden rounded-[1.75rem] border border-neutral-200 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(0,0,0,0.08)]"
+            >
+              <div className="border-b border-neutral-200 bg-neutral-50 p-4">
+                <div className="flex h-56 items-center justify-center overflow-hidden rounded-[1.25rem] border border-neutral-200 bg-white">
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="h-56 w-full object-cover transition group-hover:scale-105"
+                  />
+                </div>
+              </div>
+
+              <div className="p-5">
+                <div className="mb-3 flex items-center justify-between gap-3">
+                  <span className="rounded-full bg-[#BC2229]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#BC2229]">
+                    {product.category}
+                  </span>
+                  <span className="text-xs font-medium text-neutral-400">
+                    Stock: {product.quantity}
+                  </span>
                 </div>
 
-                <div className="p-5">
-                  <div className="mb-3 flex items-center justify-between gap-3">
-                    <span className="rounded-full bg-[#BC2229]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#BC2229]">
-                      Featured
-                    </span>
-                    <span className="text-xs font-medium text-neutral-400">
-                      Placeholder
-                    </span>
-                  </div>
+                <h3 className="text-lg font-bold tracking-tight text-neutral-950">
+                  {product.title}
+                </h3>
 
-                  <h3 className="text-lg font-bold tracking-tight text-neutral-950">
-                    Product Placeholder #{i + 1}
-                  </h3>
+                <p className="mt-2 text-sm leading-6 text-neutral-500">
+                  High-quality sticker design ready for vehicle or bike use.
+                </p>
 
-                  <p className="mt-2 text-sm leading-6 text-neutral-500">
-                    Product description placeholder
-                  </p>
-
-                  <div className="mt-6 flex items-center justify-between">
-                    <span className="text-base font-bold text-neutral-950">
-                      Price Placeholder
-                    </span>
-                    <button className="rounded-full bg-neutral-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#BC2229]">
-                      Add
-                    </button>
-                  </div>
+                <div className="mt-6 flex items-center justify-between">
+                  <span className="text-base font-bold text-neutral-950">
+                    £{product.price.toFixed(2)}
+                  </span>
+                  <Link
+                    href={`/products/${product.slug}`}
+                    className="rounded-full bg-neutral-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#BC2229]"
+                  >
+                    View
+                  </Link>
                 </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-6 hidden items-center justify-center gap-2 xl:flex">
-            {Array.from({ length: 2 }).map((_, i) => (
-              <span
-                key={i}
-                className={`h-2.5 rounded-full ${
-                  i === 0 ? "w-8 bg-[#BC2229]" : "w-2.5 bg-neutral-300"
-                }`}
-              />
-            ))}
-          </div>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
-      {/* CATEGORIES */}
       <section id="categories" className="py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="rounded-[2rem] border border-neutral-200 bg-white p-8 shadow-[0_14px_40px_rgba(0,0,0,0.05)] md:p-10">
@@ -244,8 +194,7 @@ export default function Home() {
                 Shop by Category
               </h2>
               <p className="mt-4 text-neutral-600">
-                Clear category entry points for fast navigation and a more
-                refined storefront experience.
+                This section can be wired to real filtering later.
               </p>
             </div>
 
@@ -261,9 +210,11 @@ export default function Home() {
 
                   <div className="mt-6 flex items-start justify-between gap-4">
                     <div>
-                      <h3 className="text-lg font-bold text-neutral-950">{cat}</h3>
+                      <h3 className="text-lg font-bold text-neutral-950">
+                        {cat}
+                      </h3>
                       <p className="mt-1 text-sm text-neutral-500">
-                        Category placeholder
+                        Category section ready for real filters later
                       </p>
                     </div>
                     <span className="mt-1 text-neutral-300 transition group-hover:translate-x-1 group-hover:text-[#BC2229]">
@@ -277,52 +228,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* GALLERY */}
-      <section
-        id="gallery"
-        className="mx-auto max-w-7xl px-6 py-20 md:py-24 lg:px-8"
-      >
-        <div className="mb-10 max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#BC2229]">
-            Visual Showcase
-          </p>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.04em] md:text-5xl">
-            Gallery
-          </h2>
-          <p className="mt-4 text-neutral-600">
-            A flexible gallery layout for product close-ups, installation
-            examples, packaging, or finished custom work.
-          </p>
-        </div>
-
-        <div className="grid gap-4 md:grid-cols-12 md:grid-rows-2">
-          <div className="flex h-56 items-center justify-center overflow-hidden rounded-[1.75rem] border border-neutral-200 bg-white transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.06)] md:col-span-5 md:h-[420px] md:row-span-2">
-            <span className="text-neutral-500">Preview</span>
-          </div>
-
-          <div className="flex h-44 items-center justify-center overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-neutral-100 transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.06)] md:col-span-4 md:h-[202px]">
-            <span className="text-neutral-500">Preview</span>
-          </div>
-
-          <div className="flex h-44 items-center justify-center overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-neutral-100 transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.06)] md:col-span-3 md:h-[202px]">
-            <span className="text-neutral-500">Preview</span>
-          </div>
-
-          <div className="flex h-44 items-center justify-center overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-neutral-100 transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.06)] md:col-span-3 md:h-[202px]">
-            <span className="text-neutral-500">Preview</span>
-          </div>
-
-          <div className="flex h-44 items-center justify-center overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-neutral-100 transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.06)] md:col-span-4 md:h-[202px]">
-            <span className="text-neutral-500">Preview</span>
-          </div>
-
-          <div className="flex h-44 items-center justify-center overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-neutral-100 transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.06)] md:col-span-5 md:h-[202px]">
-            <span className="text-neutral-500">Preview</span>
-          </div>
-        </div>
-      </section>
-
-      {/* WHY US */}
       <section
         id="why-us"
         className="border-y border-neutral-800 bg-neutral-950 py-20 text-white md:py-24"
@@ -337,8 +242,8 @@ export default function Home() {
                 Built for reliability, presentation, and practical use
               </h2>
               <p className="mt-4 leading-7 text-neutral-400">
-                A stronger trust section with more structure, better spacing, and
-                a premium visual feel.
+                A cleaner trust section to help make the site feel more like a
+                real store instead of a mockup.
               </p>
             </div>
 
@@ -373,82 +278,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-24 lg:px-8">
-        <div className="overflow-hidden rounded-[2rem] border border-neutral-200 bg-white p-10 shadow-[0_20px_60px_rgba(0,0,0,0.05)] md:p-14">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#BC2229]">
-              Custom Enquiries
-            </p>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.04em] md:text-5xl">
-              Need Custom Stickers?
-            </h2>
-            <p className="mt-5 text-lg leading-8 text-neutral-600">
-              Get in touch for bulk orders, branded applications, or bespoke
-              design requirements.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <button className="inline-flex rounded-full bg-[#BC2229] px-6 py-3.5 font-semibold text-white transition hover:bg-[#a61d24]">
-                Request a Quote
-              </button>
-              <button className="inline-flex rounded-full border border-neutral-300 px-6 py-3.5 font-semibold text-neutral-700 transition hover:border-[#BC2229]/35 hover:text-[#BC2229]">
-                Contact Us
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="border-t border-neutral-200 bg-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-[1.3fr_1fr_1fr_1fr] lg:px-8">
-          <div className="max-w-sm">
-            <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#BC2229] text-sm font-black text-white">
-                S
-              </div>
-              <div>
-                <h4 className="text-lg font-extrabold tracking-tight">
-                  Stickerology
-                </h4>
-                <p className="text-sm text-neutral-500">
-                  Premium sticker solutions
-                </p>
-              </div>
-            </div>
-
-            <p className="mt-5 leading-7 text-neutral-600">
-              Premium sticker solutions for businesses and individuals,
-              presented with a cleaner, more professional storefront structure.
-            </p>
-          </div>
-
-          {footerSections.map((section) => (
-            <div key={section.title}>
-              <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-neutral-900">
-                {section.title}
-              </h4>
-              <ul className="mt-4 space-y-3 text-neutral-600">
-                {section.links.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="transition hover:text-[#BC2229]">
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        <div className="border-t border-neutral-200">
-          <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-6 text-sm text-neutral-500 md:flex-row md:items-center md:justify-between lg:px-8">
-            <p>© Stickerology. All rights reserved.</p>
-            <p>Professional safety & custom sticker solutions.</p>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }
