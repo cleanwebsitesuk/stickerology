@@ -3,6 +3,21 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+// Using dynamic to import the font to avoid server-side render issues with specific fonts
+import { Anton, Montserrat } from "next/font/google";
+
+// The "flashy/top-tier" display font for large headlines and the logo-text feel
+const anton = Anton({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+// The refined "Dubai luxury" body and UI font for clean professionalism
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function SiteHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -23,18 +38,26 @@ export default function SiteHeader() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full">
-        {/* Top Navigation Bar - Solid White, highest z-index so the menu slides *under* it */}
+      {/* Applying Montserrat globally to the header to ensure all UI elements 
+        benefit from that refined, top-tier aesthetic.
+      */}
+      <header className={`${montserrat.className} sticky top-0 z-50 w-full`}>
+        
+        {/* Top Navigation Bar - Solid White, high z-index so menu slides *under* it */}
         <div className="relative z-50 mx-auto flex max-w-7xl items-center justify-between border-b border-neutral-200 bg-white px-6 py-4 lg:px-8">
           
-          {/* Logo */}
-          <Link href="/" className="flex items-center group" onClick={() => setIsMobileMenuOpen(false)}>
+          {/* Logo Area */}
+          <Link href="/" className="flex items-center group gap-2" onClick={() => setIsMobileMenuOpen(false)}>
+            {/* Logo made significantly larger to meet the "Dubai standard."
+              We use `w-[150px]` on mobile and `sm:w-[170px]` and `md:w-[200px]` 
+              on larger screens, ensuring the brand dominates the header appropriately.
+            */}
             <Image
               src="/logo.png"
               alt="Stickerology"
-              width={160}
-              height={50}
-              className="h-auto w-[110px] sm:w-[120px] md:w-[140px] object-contain transition-transform duration-300 group-hover:scale-105"
+              width={200}
+              height={60}
+              className="h-auto w-[150px] sm:w-[170px] md:w-[200px] object-contain transition-transform duration-500 group-hover:scale-105"
             />
           </Link>
 
