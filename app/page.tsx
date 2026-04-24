@@ -53,14 +53,23 @@ export default function Home() {
             {/* Micro-metrics */}
             <div className="mt-16 grid gap-4 sm:grid-cols-3">
               <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-5 backdrop-blur-md transition-all hover:border-[#D4AF37]/30">
+                <svg className="mb-3 h-6 w-6 text-[#D4AF37]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                </svg>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37]">Durability</p>
                 <p className="mt-2 text-sm font-semibold text-white uppercase tracking-wider">Weather & Scratch Resistant</p>
               </div>
               <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-5 backdrop-blur-md transition-all hover:border-[#D4AF37]/30">
+                <svg className="mb-3 h-6 w-6 text-[#D4AF37]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 2.25c-3 4.5-6 8.25-6 11.25a6 6 0 1012 0c0-3-3-6.75-6-11.25z" />
+                </svg>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37]">Precision</p>
                 <p className="mt-2 text-sm font-semibold text-white uppercase tracking-wider">True Spot Colours</p>
               </div>
               <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-5 backdrop-blur-md transition-all hover:border-[#D4AF37]/30">
+                <svg className="mb-3 h-6 w-6 text-[#D4AF37]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37]">Safety</p>
                 <p className="mt-2 text-sm font-semibold text-white uppercase tracking-wider">100% Solvent-Free</p>
               </div>
