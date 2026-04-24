@@ -3,75 +3,80 @@ import Link from "next/link";
 
 export default function SiteFooter() {
   return (
-    <footer className="mt-auto border-t border-neutral-200 bg-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-[1.4fr_1fr_1fr_1fr] lg:px-8">
-        <div className="max-w-sm">
-          <Link href="/" className="inline-flex items-center">
+    <footer className="mt-auto bg-neutral-950 border-t border-white/5 relative overflow-hidden">
+      {/* Subtle background glow */}
+      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#D4AF37]/5 to-transparent pointer-events-none" />
+
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-[1.5fr_1fr_1fr] lg:px-8">
+        
+        {/* Brand Column */}
+        <div className="max-w-md">
+          <Link href="/" className="inline-flex items-center group">
             <Image
               src="/logo.png"
               alt="Stickerology"
               width={180}
               height={56}
-              className="h-auto w-[160px] object-contain"
+              className="h-auto w-[140px] md:w-[160px] object-contain invert transition-transform duration-500 group-hover:scale-105"
             />
           </Link>
-
-          <p className="mt-5 leading-7 text-neutral-600">
-            High-quality sticker products for vehicle, bike, and custom
-            applications with a cleaner storefront and simpler buying flow.
+          <p className="mt-6 text-sm leading-relaxed text-neutral-400 font-light">
+            Engineering uncompromising, high-visibility decals built for endurance. We set the standard for structural signage and bespoke QR integrations.
           </p>
         </div>
 
+        {/* Navigation Column */}
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-neutral-900">
-            Shop
+          <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
+            Directory
           </h4>
-          <ul className="mt-4 space-y-3 text-neutral-600">
+          <ul className="mt-6 space-y-4 text-sm font-bold uppercase tracking-wider text-white">
             <li>
-              <Link href="/shop" className="transition hover:text-[#BC2229]">
-                All Products
+              <Link href="/" className="transition-colors hover:text-[#D4AF37]">
+                Home
               </Link>
             </li>
             <li>
-              <Link href="/cart" className="transition hover:text-[#BC2229]">
-                Cart
+              <Link href="/about" className="transition-colors hover:text-[#D4AF37]">
+                About
               </Link>
             </li>
             <li>
-              <Link href="/checkout" className="transition hover:text-[#BC2229]">
-                Checkout
+              <Link href="/contact" className="transition-colors hover:text-[#D4AF37]">
+                Order Form
               </Link>
             </li>
           </ul>
         </div>
 
+        {/* Enquiries Column */}
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-neutral-900">
-            Information
+          <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
+            Enquiries
           </h4>
-          <ul className="mt-4 space-y-3 text-neutral-600">
-            <li>Delivery</li>
-            <li>Returns</li>
-            <li>Contact</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-neutral-900">
-            Orders
-          </h4>
-          <ul className="mt-4 space-y-3 text-neutral-600">
-            <li>Secure payment</li>
-            <li>Order confirmation</li>
-            <li>Customer support</li>
+          <ul className="mt-6 space-y-4 text-sm font-light tracking-wide text-neutral-400">
+            <li>
+              <span className="block text-[10px] font-bold uppercase tracking-widest text-neutral-600 mb-1">Corporate & Bespoke</span>
+              <a href="mailto:contact@stickerology.com" className="transition-colors hover:text-white">
+                contact@stickerology.com
+              </a>
+            </li>
+            <li>
+              <span className="block text-[10px] font-bold uppercase tracking-widest text-neutral-600 mb-1">Global Standard</span>
+              <span className="text-white">Manufactured in the UK</span>
+            </li>
           </ul>
         </div>
       </div>
 
-      <div className="border-t border-neutral-200">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-6 text-sm text-neutral-500 md:flex-row md:items-center md:justify-between lg:px-8">
-          <p>© Stickerology. All rights reserved.</p>
-          <p>Vehicle, bike, and custom sticker products.</p>
+      {/* Bottom Bar */}
+      <div className="relative z-10 border-t border-white/10 bg-black/50">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-[11px] font-bold uppercase tracking-widest text-neutral-500 md:flex-row md:items-center md:justify-between lg:px-8">
+          <p>© {new Date().getFullYear()} Stickerology. All rights reserved.</p>
+          <p className="flex items-center gap-2">
+            <span className="h-1 w-1 rounded-full bg-[#BC2229]"></span>
+            Precision Utility Labels
+          </p>
         </div>
       </div>
     </footer>
