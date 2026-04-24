@@ -78,7 +78,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="mb-3 text-xl font-bold uppercase leading-tight tracking-tight text-black">Safety & Compliance</h3>
-              <p className="text-sm font-medium leading-relaxed text-neutral-600">Regulatory-standard warning signs, hazard indicators, and access control stickers. We produce unmistakable, high-contrast visual deterrents engineered to keep environments secure.</p>
+              <p className="text-sm font-medium leading-relaxed text-neutral-600">Regulatory-standard warning signs, hazard indicators, and access control stickers. We produce unmistakable, high-contrast visual signage engineered to keep environments safe and secure.</p>
             </article>
 
             <article className="group relative flex flex-col border border-neutral-200 bg-neutral-50 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-black hover:shadow-[6px_6px_0px_0px_#BC2229]">
@@ -88,7 +88,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="mb-3 text-xl font-bold uppercase leading-tight tracking-tight text-black">Operational Utility</h3>
-              <p className="text-sm font-medium leading-relaxed text-neutral-600">Frictionless instruction for complex environments. From refueling directives to machinery operation labels, our utility decals are designed for immediate cognitive recognition.</p>
+              <p className="text-sm font-medium leading-relaxed text-neutral-600">Clear guidance for complex environments. Whether it's safety warnings or machinery labels, our utility decals ensure your message is communicated instantly.</p>
             </article>
 
             <article className="group relative flex flex-col border border-black bg-black p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#D4AF37]">
@@ -98,7 +98,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="mb-3 text-xl font-bold uppercase leading-tight tracking-tight text-white">Custom QR Integrations</h3>
-              <p className="text-sm font-medium leading-relaxed text-neutral-400">Bridge the physical and digital. We generate and print scannable, custom QR code stickers perfect for inventory tracking, machinery logs, and interactive experiences.</p>
+              <p className="text-sm font-medium leading-relaxed text-neutral-400">Bridging the physical and digital. We generate and print scannable, custom QR code stickers perfect for instant menu retrieval, seamless network access, review capture, or any custom digital destination you require.</p>
             </article>
           </div>
         </div>
