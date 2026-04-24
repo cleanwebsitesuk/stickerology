@@ -181,3 +181,18 @@ export default function Home() {
             Ready to Commission?
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-base text-white/90 font-medium">
+            Contact us directly to discuss your bespoke sticker requirements, sizing, and pricing.
+          </p>
+          <div className="mt-8 flex justify-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center bg-white px-8 py-4 text-sm font-bold uppercase tracking-wider text-black transition-all hover:bg-black hover:text-[#D4AF37] shadow-[4px_4px_0px_0px_#000000]"
+            >
+              Contact To Order
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
