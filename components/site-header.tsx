@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function SiteHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Prevent scrolling when mobile menu is open
+  // Prevent background scrolling when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -17,9 +17,9 @@ export default function SiteHeader() {
   }, [isMobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white/95 backdrop-blur-xl transition-all">
-      {/* Top Bar - High z-index ensures it sits above the mobile menu overlay */}
-      <div className="relative z-50 mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+    <header className="sticky top-0 z-50 w-full border-b border-neutral-200 bg-white">
+      {/* Top Navigation Bar */}
+      <div className="relative z-50 mx-auto flex max-w-7xl items-center justify-between bg-white px-6 py-4 lg:px-8">
         
         {/* Logo */}
         <Link href="/" className="flex items-center group" onClick={() => setIsMobileMenuOpen(false)}>
@@ -28,7 +28,7 @@ export default function SiteHeader() {
             alt="Stickerology"
             width={160}
             height={50}
-            className="h-auto w-[110px] sm:w-[120px] md:w-[140px] object-contain transition-transform duration-300 group-hover:scale-105"
+            className="h-auto w-[120px] md:w-[140px] object-contain transition-transform duration-300 group-hover:scale-105"
           />
         </Link>
 
@@ -54,19 +54,19 @@ export default function SiteHeader() {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle Menu"
         >
-          <span className={`block h-[2px] bg-neutral-900 transition-all duration-300 ${isMobileMenuOpen ? "w-6 translate-y-[8px] rotate-45" : "w-8"}`} />
+          <span className={`block h-[2px] bg-neutral-900 transition-all duration-300 ${isMobileMenuOpen ? "w-7 translate-y-[8px] rotate-45" : "w-8"}`} />
           <span className={`block h-[2px] bg-neutral-900 transition-all duration-300 ${isMobileMenuOpen ? "w-0 opacity-0" : "w-6"}`} />
-          <span className={`block h-[2px] bg-neutral-900 transition-all duration-300 ${isMobileMenuOpen ? "w-6 -translate-y-[8px] -rotate-45" : "w-4"}`} />
+          <span className={`block h-[2px] bg-neutral-900 transition-all duration-300 ${isMobileMenuOpen ? "w-7 -translate-y-[8px] -rotate-45" : "w-4"}`} />
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay (Bulletproof solid background) */}
       <div 
-        className={`fixed inset-0 z-40 flex flex-col items-center justify-center bg-white/98 backdrop-blur-3xl transition-all duration-300 ease-in-out md:hidden ${
-          isMobileMenuOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-4 pointer-events-none"
+        className={`fixed inset-0 z-40 bg-white transition-all duration-300 ease-in-out md:hidden ${
+          isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
         }`}
       >
-        <nav className="flex flex-col items-center gap-10 text-2xl font-bold uppercase tracking-widest text-neutral-900">
+        <nav className="flex h-[100dvh] flex-col items-center justify-center gap-8 pb-20 text-3xl font-black uppercase tracking-widest text-neutral-900">
           <Link 
             href="/" 
             className="transition-colors hover:text-[#BC2229]"
@@ -83,10 +83,10 @@ export default function SiteHeader() {
           </Link>
           <Link 
             href="/contact" 
-            className="mt-6 rounded-full bg-neutral-950 px-12 py-5 text-sm font-bold text-white transition-all hover:bg-[#BC2229]"
+            className="mt-6 rounded-full bg-neutral-950 px-12 py-4 text-lg font-bold text-white transition-all hover:bg-[#BC2229]"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            Order Now
+            Order
           </Link>
         </nav>
       </div>
