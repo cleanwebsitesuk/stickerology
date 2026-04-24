@@ -30,14 +30,14 @@ export default function Home() {
 
             {/* Scaled-down Cinematic Typography */}
             <h1 className="mt-8 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl uppercase text-white">
-              Precision Utility
+              World-class
               <span className="mt-2 block bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] bg-clip-text text-transparent">
-                & Warning Labels
+                Stickers & Graphics
               </span>
             </h1>
 
             <p className="mt-8 max-w-2xl text-base leading-relaxed text-neutral-400 font-light tracking-wide md:text-lg">
-              Stickerology engineers uncompromising, high-visibility decals built for endurance. From industrial safety compliance to custom technological integrations, we define structural signage.
+              At Stickerology, we engineer uncompromising, high-visibility stickers, graphics and decals built for endurance. From industrial safety compliance to custom technological integrations, we define structural signage.
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
