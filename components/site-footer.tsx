@@ -3,10 +3,7 @@ import Link from "next/link";
 
 export default function SiteFooter() {
   return (
-    <footer className="mt-auto bg-neutral-950 border-t border-white/5 relative overflow-hidden">
-      {/* Subtle background glow */}
-      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#D4AF37]/5 to-transparent pointer-events-none" />
-
+    <footer className="mt-auto bg-white border-t border-neutral-200 relative overflow-hidden">
       <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-[1.5fr_1fr_1fr] lg:px-8">
         
         {/* Brand Column */}
@@ -17,60 +14,60 @@ export default function SiteFooter() {
               alt="Stickerology"
               width={180}
               height={56}
-              className="h-auto w-[140px] md:w-[160px] object-contain invert transition-transform duration-500 group-hover:scale-105"
+              className="h-auto w-[140px] md:w-[160px] object-contain transition-transform duration-500 group-hover:scale-105"
             />
           </Link>
-          <p className="mt-6 text-sm leading-relaxed text-neutral-400 font-light">
-            Engineering uncompromising, high-visibility decals built for endurance. We set the standard for structural signage and bespoke QR integrations.
+          <p className="mt-6 text-sm leading-relaxed text-neutral-600 font-light">
+            Engineering uncompromising, high-visibility decals built for endurance. We set the standard for structural signage and custom bespoke printing.
           </p>
         </div>
 
         {/* Navigation Column */}
         <div>
-          <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
+          <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-950">
             Directory
           </h4>
-          <ul className="mt-6 space-y-4 text-sm font-bold uppercase tracking-wider text-white">
+          <ul className="mt-6 space-y-4 text-sm font-bold uppercase tracking-wider text-neutral-600">
             <li>
-              <Link href="/" className="transition-colors hover:text-[#D4AF37]">
+              <Link href="/" className="transition-colors hover:text-[#BC2229]">
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/about" className="transition-colors hover:text-[#D4AF37]">
+              <Link href="/about" className="transition-colors hover:text-[#BC2229]">
                 About
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="transition-colors hover:text-[#D4AF37]">
+              <Link href="/contact" className="transition-colors hover:text-[#BC2229]">
                 Order Form
               </Link>
             </li>
           </ul>
         </div>
 
-        {/* Enquiries Column */}
+        {/* Enquiries / Info Column */}
         <div>
-          <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
-            Enquiries
+          <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-950">
+            Information
           </h4>
-          <ul className="mt-6 space-y-4 text-sm font-light tracking-wide text-neutral-400">
+          <ul className="mt-6 space-y-4 text-sm font-light tracking-wide text-neutral-600">
             <li>
-              <span className="block text-[10px] font-bold uppercase tracking-widest text-neutral-600 mb-1">Corporate & Bespoke</span>
-              <a href="mailto:contact@stickerology.com" className="transition-colors hover:text-white">
-                contact@stickerology.com
-              </a>
+              <span className="block text-[10px] font-bold uppercase tracking-widest text-neutral-400 mb-1">Corporate & Bespoke</span>
+              <Link href="/contact" className="transition-colors font-semibold hover:text-[#BC2229]">
+                Contact us via order form
+              </Link>
             </li>
             <li>
-              <span className="block text-[10px] font-bold uppercase tracking-widest text-neutral-600 mb-1">Global Standard</span>
-              <span className="text-white">Manufactured in the UK</span>
+              <span className="block text-[10px] font-bold uppercase tracking-widest text-neutral-400 mb-1">Manufacturing</span>
+              <span className="font-semibold text-neutral-900">Proudly made in the UK</span>
             </li>
           </ul>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="relative z-10 border-t border-white/10 bg-black/50">
+      <div className="border-t border-neutral-100 bg-neutral-50">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-[11px] font-bold uppercase tracking-widest text-neutral-500 md:flex-row md:items-center md:justify-between lg:px-8">
           <p>© {new Date().getFullYear()} Stickerology. All rights reserved.</p>
           <p className="flex items-center gap-2">
