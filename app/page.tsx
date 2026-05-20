@@ -6,201 +6,452 @@ const inter = Inter({
   display: "swap",
 });
 
+const capabilities = [
+  {
+    number: "01",
+    title: "Safety & Compliance",
+    text: "High-contrast warning signs, access labels and regulatory graphics designed for instant recognition in demanding environments.",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 9v3.75m0 3.75h.01M10.29 3.86 2.82 16.5A2 2 0 0 0 4.54 19.5h14.92a2 2 0 0 0 1.72-3L13.71 3.86a2 2 0 0 0-3.42 0Z"
+      />
+    ),
+  },
+  {
+    number: "02",
+    title: "Operational Decals",
+    text: "Durable, practical graphics for machinery, vehicles, controls, panels and equipment where clarity matters every day.",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="m13 2.75-8.25 11h6L10.5 21.25l8.75-12h-6L13 2.75Z"
+      />
+    ),
+  },
+  {
+    number: "03",
+    title: "QR & Digital Labels",
+    text: "Scannable stickers for menus, Wi-Fi access, instructions, asset links and digital destinations built into physical spaces.",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M4.75 4.75h4.5v4.5h-4.5v-4.5Zm10 0h4.5v4.5h-4.5v-4.5Zm-10 10h4.5v4.5h-4.5v-4.5Zm10 0h1.5m3 0h.5m-5 4.5h.5m3.5-3.5v3.5m-3.5-1.75h3.5M12 5.5v.01M12 9v.01M12 12.5v.01M15.5 12.5v.01M19 12.5v.01"
+      />
+    ),
+  },
+];
+
+const proofPoints = [
+  "Weather resistant",
+  "Scratch resistant",
+  "True spot colours",
+  "Solvent-free options",
+];
+
+const process = [
+  {
+    number: "01",
+    title: "Contact",
+    text: "Send dimensions, use case, material needs and any existing artwork or design direction.",
+  },
+  {
+    number: "02",
+    title: "Review",
+    text: "Your requirements are checked properly so the finish, durability and quote make sense before production.",
+  },
+  {
+    number: "03",
+    title: "Produce",
+    text: "Approved graphics move into manufacturing with durable materials, clean finishing and careful dispatch.",
+  },
+];
+
 export default function Home() {
   return (
-    <main className={`${inter.className} min-h-screen selection:bg-[#D4AF37] selection:text-black overflow-hidden bg-white`}>
-      
-      {/* HERO SECTION: Deep Black */}
-      <section className="relative bg-neutral-950 flex flex-col justify-center px-6 py-16 sm:py-20 lg:px-8 border-b-4 border-[#BC2229]">
-        {/* Subtle background glow */}
-        <div className="absolute top-0 left-1/4 h-[300px] w-[300px] sm:h-[500px] sm:w-[500px] -translate-y-1/2 rounded-full bg-[#D4AF37]/10 blur-[100px] sm:blur-[120px] pointer-events-none" />
-        
-        <div className="relative z-10 mx-auto max-w-7xl w-full">
-          <div className="max-w-3xl">
-            {/* Elegant Pill */}
-            <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-xl">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4AF37] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D4AF37]"></span>
-              </span>
-              <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-[#D4AF37]">
-                The Absolute Standard
-              </span>
+    <main
+      className={`${inter.className} min-h-screen overflow-hidden bg-white text-neutral-950 selection:bg-[#D4AF37] selection:text-black`}
+    >
+      {/* HEADER */}
+      <header className="sticky top-0 z-50 border-b border-neutral-200/80 bg-white/95 backdrop-blur-xl">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
+          <Link href="/" className="group flex items-center">
+            <div className="rounded-xl border border-neutral-200 bg-white p-1.5 shadow-sm transition group-hover:border-neutral-300">
+              <img
+                src="/logo.png"
+                alt="Stickerology"
+                className="h-10 w-auto sm:h-11"
+              />
             </div>
+          </Link>
 
-            {/* Cinematic Typography - Scaled for Mobile */}
-            <h1 className="mt-8 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl uppercase text-white">
-              World-class
-              <span className="mt-1 sm:mt-2 block bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] bg-clip-text text-transparent">
-                Stickers & Graphics
-              </span>
-            </h1>
-
-            <p className="mt-6 sm:mt-8 max-w-2xl text-sm sm:text-base leading-relaxed text-neutral-400 font-light tracking-wide md:text-lg">
-              At Stickerology, we engineer uncompromising, high-visibility stickers, graphics and decals built for endurance. From industrial safety compliance to custom technological integrations, we define structural signage.
-            </p>
-
-            <div className="mt-10 flex flex-col sm:flex-row">
-              <Link
-                href="/contact"
-                className="group relative inline-flex w-full sm:w-fit items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] px-8 py-4 sm:py-3.5 text-sm font-bold uppercase tracking-widest text-black transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(212,175,55,0.3)]"
-              >
-                <span className="relative z-10">Start Your Order</span>
-                <div className="absolute inset-0 h-full w-full bg-white/20 opacity-0 transition-opacity group-hover:opacity-100" />
-              </Link>
-            </div>
-
-            {/* Micro-metrics - Tighter on Mobile */}
-            <div className="mt-16 grid gap-4 sm:grid-cols-3">
-              <div className="flex items-center gap-4 sm:block rounded-2xl border border-white/5 bg-white/[0.02] p-4 sm:p-5 backdrop-blur-md transition-all hover:border-[#D4AF37]/30">
-                <svg className="sm:mb-3 h-8 w-8 sm:h-6 sm:w-6 text-[#D4AF37] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                </svg>
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37]">Durability</p>
-                  <p className="mt-1 sm:mt-2 text-xs sm:text-sm font-semibold text-white uppercase tracking-wider">Weather & Scratch Resistant</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4 sm:block rounded-2xl border border-white/5 bg-white/[0.02] p-4 sm:p-5 backdrop-blur-md transition-all hover:border-[#D4AF37]/30">
-                <svg className="sm:mb-3 h-8 w-8 sm:h-6 sm:w-6 text-[#D4AF37] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 2.25c-3 4.5-6 8.25-6 11.25a6 6 0 1012 0c0-3-3-6.75-6-11.25z" />
-                </svg>
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37]">Precision</p>
-                  <p className="mt-1 sm:mt-2 text-xs sm:text-sm font-semibold text-white uppercase tracking-wider">True Spot Colours</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4 sm:block rounded-2xl border border-white/5 bg-white/[0.02] p-4 sm:p-5 backdrop-blur-md transition-all hover:border-[#D4AF37]/30">
-                <svg className="sm:mb-3 h-8 w-8 sm:h-6 sm:w-6 text-[#D4AF37] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37]">Safety</p>
-                  <p className="mt-1 sm:mt-2 text-xs sm:text-sm font-semibold text-white uppercase tracking-wider">100% Solvent-Free</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CORE COMPETENCIES SECTION: Clean White */}
-      <section className="bg-white px-6 py-16 sm:py-20 md:py-28 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col items-center text-center">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#D4AF37]">Core Competencies</p>
-            <h2 className="mt-3 text-3xl font-extrabold uppercase tracking-tight text-neutral-950 md:text-4xl">Our Expertise</h2>
-            <div className="mt-5 sm:mt-6 h-[2px] w-16 bg-[#BC2229]" />
-          </div>
-
-          <div className="mt-12 sm:mt-16 grid gap-6 md:grid-cols-3">
-            <article className="group relative rounded-2xl border border-neutral-200 bg-neutral-50 p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-xl hover:shadow-neutral-200/50">
-              <div className="mb-5 sm:mb-6 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-xl bg-neutral-950 text-[#D4AF37]">
-                <svg className="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                </svg>
-              </div>
-              <h3 className="mb-2 sm:mb-3 text-lg font-bold uppercase tracking-wide text-neutral-950">Safety & Compliance</h3>
-              <p className="text-sm leading-relaxed text-neutral-600">Regulatory-standard warning signs, hazard indicators, and access control stickers. We produce unmistakable, high-contrast visual signage engineered to keep environments secure.</p>
-            </article>
-
-            <article className="group relative rounded-2xl border border-neutral-200 bg-neutral-50 p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-xl hover:shadow-neutral-200/50">
-              <div className="mb-5 sm:mb-6 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-xl bg-neutral-950 text-[#D4AF37]">
-                <svg className="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="mb-2 sm:mb-3 text-lg font-bold uppercase tracking-wide text-neutral-950">Operational Utility</h3>
-              <p className="text-sm leading-relaxed text-neutral-600">Instant clarity for demanding environments. From fuel caps to machinery controls, our utility decals are designed to be understood at a single glance.</p>
-            </article>
-
-            <article className="group relative rounded-2xl border border-neutral-200 bg-neutral-50 p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[#D4AF37]/50 hover:shadow-xl hover:shadow-[#D4AF37]/10">
-              <div className="mb-5 sm:mb-6 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-xl bg-neutral-950 text-[#D4AF37]">
-                <svg className="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
-                </svg>
-              </div>
-              <h3 className="mb-2 sm:mb-3 text-lg font-bold uppercase tracking-wide text-neutral-950">Custom QR Integrations</h3>
-              <p className="text-sm leading-relaxed text-neutral-600">Bridging the physical and digital. We generate scannable, bespoke QR stickers perfect for instant menu retrieval, Wi-Fi pairing, or any specific digital destination.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      {/* TECHNICAL SPECIFICATIONS & PROCESS: Deep Black */}
-      <section className="bg-neutral-950 px-6 py-16 sm:py-20 md:py-28 lg:px-8 border-y border-[#D4AF37]/20 relative overflow-hidden">
-        {/* Subtle red glow */}
-        <div className="absolute bottom-0 right-0 w-72 h-72 sm:w-96 sm:h-96 bg-[#BC2229]/10 blur-[80px] sm:blur-[100px] pointer-events-none" />
-        
-        <div className="mx-auto max-w-7xl relative z-10">
-          <div className="grid gap-12 sm:gap-16 lg:grid-cols-2 lg:gap-24">
-            <div>
-              <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#D4AF37]">The Standard</p>
-              <h2 className="mt-2 sm:mt-3 text-3xl font-extrabold uppercase tracking-tight text-white md:text-4xl">
-                Engineered <br />For Extremes
-              </h2>
-              <p className="mt-4 sm:mt-6 text-sm sm:text-base leading-relaxed text-neutral-400 font-light">
-                Our world-class facilities utilize professional-grade technology to deliver a product that survives where others fail. By utilizing true spot colours and resin-based printing, we ensure absolute perfection in every run.
-              </p>
-
-              <div className="mt-8 sm:mt-10 space-y-6">
-                <div className="border-l-2 border-[#D4AF37] pl-4 sm:pl-5">
-                  <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white">Resin-Based Superiority</h4>
-                  <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm font-light text-neutral-400 leading-relaxed">Highly immune to chemical reactions with excellent scratch resistance, vastly outperforming traditional solvents.</p>
-                </div>
-                <div className="border-l-2 border-[#D4AF37] pl-4 sm:pl-5">
-                  <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white">True Spot Colours</h4>
-                  <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm font-light text-neutral-400 leading-relaxed">Achieving perfect brand matching and extreme vibrancy through true spot colour technology rather than standard mixtures.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col justify-center rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 md:p-12 backdrop-blur-md">
-              <h3 className="text-base sm:text-lg font-bold uppercase tracking-wide text-white mb-6 sm:mb-8 border-b border-white/10 pb-4">The Process</h3>
-              <div className="grid gap-6 sm:gap-8">
-                <div className="flex gap-4 sm:gap-5 items-start">
-                  <span className="text-[#D4AF37] font-bold text-lg sm:text-xl tracking-tight">01</span>
-                  <div>
-                    <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white">Contact</h4>
-                    <p className="mt-1 text-xs sm:text-sm font-light text-neutral-400">Reach out with your specific dimensions, material requirements, and design concepts.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4 sm:gap-5 items-start">
-                  <span className="text-[#D4AF37] font-bold text-lg sm:text-xl tracking-tight">02</span>
-                  <div>
-                    <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white">Review</h4>
-                    <p className="mt-1 text-xs sm:text-sm font-light text-neutral-400">We review your requirements and provide a precise quote to ensure your stickers meet your exact specifications.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4 sm:gap-5 items-start">
-                  <span className="text-[#D4AF37] font-bold text-lg sm:text-xl tracking-tight">03</span>
-                  <div>
-                    <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white">Deploy</h4>
-                    <p className="mt-1 text-xs sm:text-sm font-light text-neutral-400">Rapid manufacturing and dispatch of weather-resistant, highly durable final products.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FINAL CALL TO ACTION: Velvet Red */}
-      <section className="bg-[#BC2229] px-6 py-16 sm:py-20 text-center lg:px-8">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-extrabold uppercase tracking-tight text-white md:text-4xl">
-            Ready to Order?
-          </h2>
-          <p className="mx-auto mt-3 sm:mt-4 max-w-md text-sm sm:text-base text-white/90 font-medium">
-            Contact us directly to discuss your bespoke requirements, sizing, and pricing.
-          </p>
-          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center">
+          <nav className="hidden items-center gap-8 md:flex">
+            <Link
+              href="/"
+              className="text-[11px] font-black uppercase tracking-[0.22em] text-neutral-950 transition hover:text-[#BC2229]"
+            >
+              Home
+            </Link>
+            <Link
+              href="/about"
+              className="text-[11px] font-black uppercase tracking-[0.22em] text-neutral-950 transition hover:text-[#BC2229]"
+            >
+              About
+            </Link>
             <Link
               href="/contact"
-              className="group inline-flex w-full sm:w-fit items-center justify-center rounded-full bg-white px-10 py-4 text-sm font-bold uppercase tracking-widest text-neutral-950 transition-all hover:bg-black hover:text-[#D4AF37] hover:shadow-lg"
+              className="rounded-full bg-neutral-950 px-7 py-3 text-[11px] font-black uppercase tracking-[0.22em] text-white shadow-sm transition hover:bg-[#BC2229]"
             >
-              Contact Us
+              Order
             </Link>
+          </nav>
+
+          <Link
+            href="/contact"
+            className="rounded-full bg-neutral-950 px-5 py-2.5 text-[10px] font-black uppercase tracking-[0.18em] text-white shadow-sm transition hover:bg-[#BC2229] md:hidden"
+          >
+            Order
+          </Link>
+        </div>
+      </header>
+
+      {/* HERO */}
+      <section className="relative isolate bg-neutral-950 px-5 py-16 text-white sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+        {/* Background system */}
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_0%,rgba(212,175,55,0.14),transparent_34%),radial-gradient(circle_at_85%_55%,rgba(188,34,41,0.15),transparent_32%),linear-gradient(135deg,rgba(255,255,255,0.05)_0.5px,transparent_0.5px)] bg-[length:auto,auto,34px_34px]" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-neutral-950 via-neutral-950/95 to-neutral-950" />
+
+        <div className="mx-auto max-w-7xl">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 shadow-2xl shadow-black/20 backdrop-blur-xl">
+                <span className="h-2 w-2 rounded-full bg-[#D4AF37] shadow-[0_0_18px_rgba(212,175,55,0.85)]" />
+                <span className="text-[10px] font-black uppercase tracking-[0.22em] text-[#D4AF37] sm:text-[11px]">
+                  The Absolute Standard
+                </span>
+              </div>
+
+              <h1 className="mt-8 max-w-4xl text-5xl font-black uppercase leading-[0.95] tracking-[-0.055em] text-white sm:text-6xl lg:text-7xl xl:text-8xl">
+                Precision
+                <span className="block text-[#D4AF37]">stickers</span>
+                <span className="block">& graphics.</span>
+              </h1>
+
+              <p className="mt-7 max-w-2xl text-base leading-8 text-neutral-300 sm:text-lg">
+                High-visibility stickers, decals and signage engineered for
+                clean presentation, practical use and long-term durability.
+              </p>
+
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-xs font-black uppercase tracking-[0.22em] text-black shadow-[0_18px_50px_rgba(212,175,55,0.18)] transition hover:-translate-y-0.5 hover:bg-[#FCF6BA]"
+                >
+                  Start Your Order
+                </Link>
+
+                <Link
+                  href="#capabilities"
+                  className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.03] px-8 py-4 text-xs font-black uppercase tracking-[0.22em] text-white transition hover:-translate-y-0.5 hover:border-[#D4AF37]/60 hover:text-[#D4AF37]"
+                >
+                  View Capabilities
+                </Link>
+              </div>
+
+              <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-4">
+                {proofPoints.map((point) => (
+                  <div
+                    key={point}
+                    className="bg-neutral-950/80 px-4 py-4 text-center backdrop-blur-xl"
+                  >
+                    <p className="text-[10px] font-black uppercase tracking-[0.18em] text-neutral-200">
+                      {point}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Abstract specification panel, no sticker imagery */}
+            <div className="relative hidden lg:block">
+              <div className="absolute -inset-8 rounded-[3rem] bg-[#D4AF37]/10 blur-3xl" />
+
+              <div className="relative rounded-[2rem] border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-black/40 backdrop-blur-xl">
+                <div className="mb-6 flex items-center justify-between border-b border-white/10 pb-5">
+                  <div>
+                    <p className="text-[10px] font-black uppercase tracking-[0.24em] text-[#D4AF37]">
+                      Production Standard
+                    </p>
+                    <h2 className="mt-2 text-2xl font-black uppercase tracking-[-0.03em] text-white">
+                      Built for visibility
+                    </h2>
+                  </div>
+                  <div className="flex gap-1.5">
+                    <span className="h-2.5 w-2.5 rounded-full bg-[#BC2229]" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-[#D4AF37]" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-white" />
+                  </div>
+                </div>
+
+                <div className="grid gap-4">
+                  <div className="rounded-2xl border border-white/10 bg-neutral-950/70 p-5">
+                    <div className="flex items-start justify-between gap-6">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-500">
+                          Finish
+                        </p>
+                        <p className="mt-2 text-lg font-black uppercase text-white">
+                          Clean, sharp, durable
+                        </p>
+                      </div>
+                      <div className="h-12 w-12 rounded-xl border border-[#D4AF37]/40 bg-[#D4AF37]/10" />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="rounded-2xl border border-white/10 bg-neutral-950/70 p-5">
+                      <p className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-500">
+                        Colour
+                      </p>
+                      <p className="mt-2 text-xl font-black text-[#D4AF37]">
+                        Spot
+                      </p>
+                    </div>
+                    <div className="rounded-2xl border border-white/10 bg-neutral-950/70 p-5">
+                      <p className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-500">
+                        Use
+                      </p>
+                      <p className="mt-2 text-xl font-black text-white">
+                        Indoor / Outdoor
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="rounded-2xl border border-white/10 bg-neutral-950/70 p-5">
+                    <div className="mb-4 flex items-center justify-between">
+                      <p className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-500">
+                        Durability profile
+                      </p>
+                      <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#D4AF37]">
+                        Checked
+                      </p>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="h-2 overflow-hidden rounded-full bg-white/10">
+                        <div className="h-full w-[92%] rounded-full bg-[#D4AF37]" />
+                      </div>
+                      <div className="h-2 overflow-hidden rounded-full bg-white/10">
+                        <div className="h-full w-[86%] rounded-full bg-[#BC2229]" />
+                      </div>
+                      <div className="h-2 overflow-hidden rounded-full bg-white/10">
+                        <div className="h-full w-[78%] rounded-full bg-white" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6 rounded-2xl border border-[#BC2229]/40 bg-[#BC2229]/10 px-5 py-4">
+                  <p className="text-[11px] font-black uppercase tracking-[0.18em] text-white">
+                    Designed to be clear at a glance.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CAPABILITIES */}
+      <section
+        id="capabilities"
+        className="relative bg-white px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+      >
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(10,10,10,0.035)_0.5px,transparent_0.5px)] bg-[length:34px_34px]" />
+
+        <div className="relative mx-auto max-w-7xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-[11px] font-black uppercase tracking-[0.24em] text-[#D4AF37]">
+              Core Competencies
+            </p>
+            <h2 className="mt-3 text-4xl font-black uppercase leading-none tracking-[-0.04em] text-neutral-950 sm:text-5xl">
+              Our Expertise
+            </h2>
+            <div className="mx-auto mt-6 h-1 w-16 rounded-full bg-[#BC2229]" />
+            <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-neutral-600 sm:text-base">
+              Focused graphic production for businesses that need their labels,
+              decals and signage to look sharp, read instantly and last.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+            {capabilities.map((item) => (
+              <article
+                key={item.title}
+                className="group relative overflow-hidden rounded-[1.75rem] border border-neutral-200 bg-white p-6 shadow-[0_20px_70px_rgba(10,10,10,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#D4AF37]/60 hover:shadow-[0_28px_90px_rgba(10,10,10,0.1)] sm:p-8"
+              >
+                <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-[#BC2229] via-[#D4AF37] to-transparent opacity-80" />
+
+                <div className="mb-8 flex items-start justify-between gap-6">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-neutral-950 text-[#D4AF37] shadow-lg shadow-neutral-950/10">
+                    <svg
+                      className="h-7 w-7"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.6}
+                    >
+                      {item.icon}
+                    </svg>
+                  </div>
+
+                  <span className="text-5xl font-black leading-none tracking-[-0.08em] text-neutral-100 transition group-hover:text-[#D4AF37]/20">
+                    {item.number}
+                  </span>
+                </div>
+
+                <h3 className="text-xl font-black uppercase tracking-[-0.02em] text-neutral-950">
+                  {item.title}
+                </h3>
+                <p className="mt-4 max-w-sm text-sm leading-7 text-neutral-600">
+                  {item.text}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* STANDARD / PROCESS */}
+      <section className="relative isolate bg-neutral-950 px-5 py-16 text-white sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_90%_25%,rgba(188,34,41,0.2),transparent_34%),radial-gradient(circle_at_15%_80%,rgba(212,175,55,0.1),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.045)_0.5px,transparent_0.5px)] bg-[length:auto,auto,36px_36px]" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent" />
+
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+            <div>
+              <p className="text-[11px] font-black uppercase tracking-[0.24em] text-[#D4AF37]">
+                The Standard
+              </p>
+              <h2 className="mt-4 text-4xl font-black uppercase leading-[0.98] tracking-[-0.05em] text-white sm:text-5xl lg:text-6xl">
+                Engineered
+                <span className="block">for extremes.</span>
+              </h2>
+              <p className="mt-6 max-w-xl text-base leading-8 text-neutral-400">
+                A sharper standard for graphics that need to stay legible,
+                professional and dependable beyond the first impression.
+              </p>
+
+              <div className="mt-10 grid gap-4">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-5 backdrop-blur-xl">
+                  <div className="flex gap-4">
+                    <div className="mt-1 h-12 w-1 rounded-full bg-[#D4AF37]" />
+                    <div>
+                      <h3 className="text-sm font-black uppercase tracking-[0.14em] text-white">
+                        Resin-Based Superiority
+                      </h3>
+                      <p className="mt-2 text-sm leading-7 text-neutral-400">
+                        Excellent resistance, cleaner presentation and a finish
+                        designed to outperform ordinary low-grade decals.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-5 backdrop-blur-xl">
+                  <div className="flex gap-4">
+                    <div className="mt-1 h-12 w-1 rounded-full bg-[#BC2229]" />
+                    <div>
+                      <h3 className="text-sm font-black uppercase tracking-[0.14em] text-white">
+                        True Spot Colours
+                      </h3>
+                      <p className="mt-2 text-sm leading-7 text-neutral-400">
+                        More controlled colour output for stronger brand
+                        matching, visibility and professional consistency.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-5 shadow-2xl shadow-black/30 backdrop-blur-xl sm:p-8">
+              <div className="flex flex-col gap-5 border-b border-white/10 pb-6 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p className="text-[11px] font-black uppercase tracking-[0.24em] text-[#D4AF37]">
+                    Production Flow
+                  </p>
+                  <h3 className="mt-2 text-2xl font-black uppercase tracking-[-0.04em] text-white sm:text-3xl">
+                    The Process
+                  </h3>
+                </div>
+                <p className="max-w-xs text-sm leading-6 text-neutral-500">
+                  Straightforward, controlled and built around getting the
+                  details right before anything is made.
+                </p>
+              </div>
+
+              <div className="mt-8 grid gap-5">
+                {process.map((step, index) => (
+                  <div
+                    key={step.title}
+                    className="relative rounded-2xl border border-white/10 bg-neutral-950/70 p-5"
+                  >
+                    {index !== process.length - 1 && (
+                      <div className="absolute left-[2.15rem] top-[4.6rem] hidden h-8 w-px bg-white/10 sm:block" />
+                    )}
+
+                    <div className="flex gap-5">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#D4AF37]/40 bg-[#D4AF37]/10 text-sm font-black text-[#D4AF37]">
+                        {step.number}
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-black uppercase tracking-[0.16em] text-white">
+                          {step.title}
+                        </h4>
+                        <p className="mt-2 text-sm leading-7 text-neutral-400">
+                          {step.text}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-white px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="relative overflow-hidden rounded-[2rem] bg-[#BC2229] px-6 py-12 text-center shadow-[0_30px_100px_rgba(188,34,41,0.24)] sm:px-10 sm:py-16 lg:px-16">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.22),transparent_28%),radial-gradient(circle_at_80%_80%,rgba(0,0,0,0.2),transparent_36%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.12)_0.5px,transparent_0.5px)] bg-[length:32px_32px] opacity-40" />
+
+            <div className="relative mx-auto max-w-3xl">
+              <p className="text-[11px] font-black uppercase tracking-[0.24em] text-[#FCF6BA]">
+                Ready when you are
+              </p>
+              <h2 className="mt-4 text-4xl font-black uppercase leading-none tracking-[-0.05em] text-white sm:text-5xl">
+                Ready to order?
+              </h2>
+              <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-white/90 sm:text-base">
+                Contact us directly to discuss your bespoke requirements,
+                sizing, materials and pricing.
+              </p>
+
+              <div className="mt-8">
+                <Link
+                  href="/contact"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-white px-10 py-4 text-xs font-black uppercase tracking-[0.22em] text-neutral-950 shadow-xl shadow-black/10 transition hover:-translate-y-0.5 hover:bg-neutral-950 hover:text-[#D4AF37] sm:w-auto"
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
