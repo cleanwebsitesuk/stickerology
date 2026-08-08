@@ -538,7 +538,7 @@ export default function Page() {
               </Reveal>
               <Reveal delay={0.16}>
                 <p className="mt-6 max-w-md text-lg leading-relaxed text-white/75">
-                  2,400 sticker specimens covering the entire human emotional range, sendable in
+                  Sticker specimens covering the entire human emotional range, sendable in
                   every app you already text in. Admission is free. The exit is through the gift shop.
                 </p>
               </Reveal>
@@ -824,7 +824,7 @@ export default function Page() {
                 Your group chat is under&#8209;decorated.
               </h2>
               <p className="mx-auto mt-6 max-w-md text-lg leading-relaxed text-white/90">
-                2,400 specimens. Zero cost of admission. One correct way to respond to
+                Unlimited specimens. Zero cost of admission. One correct way to respond to
                 &ldquo;we need to talk&rdquo; — and it&rsquo;s a sticker.
               </p>
               <div className="mt-10 flex justify-center">
