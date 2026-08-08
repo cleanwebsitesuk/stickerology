@@ -8,9 +8,9 @@ const inter = Inter({ subsets: ["latin"], display: "swap" });
 export default function SiteFooter() {
   return (
     <footer className={`${inter.className} mt-auto border-t border-white/10 bg-[#070A20] text-white`}>
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
-        {/* Brand Column */}
-        <div className="max-w-md">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-16 md:grid-cols-[1.6fr_1fr]">
+        {/* Brand + CTA */}
+        <div className="max-w-lg">
           <Link
             href="/"
             className="group inline-flex items-center gap-4 rounded-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#3FD8F0]"
@@ -29,14 +29,23 @@ export default function SiteFooter() {
               </span>
             </span>
           </Link>
-          <div className="mt-6 space-y-2 text-[13px] leading-relaxed text-white/55">
-            <p>No stickers were harmed in the mounting process. Several were emotionally validated.</p>
-            <p>Open 24 hours. The internet does not observe public holidays.</p>
-          </div>
+          <p className={`${fredoka.className} mt-7 text-2xl font-semibold leading-snug sm:text-3xl`}>
+            Download your sticker packs and give your chats some soul.
+          </p>
+          <Link
+            href="/#packs"
+            className="group mt-7 inline-block rounded-full bg-white p-[5px] shadow-[0_10px_24px_rgba(255,45,149,0.3)] transition-transform hover:scale-105 active:translate-y-[2px] active:scale-95 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#3FD8F0]"
+          >
+            <span
+              className={`${fredoka.className} block rounded-full border-2 border-black bg-[linear-gradient(105deg,#FF2D95,#8B2FE0_55%,#2F9BFF)] px-7 py-3 text-base font-semibold text-white`}
+            >
+              Browse packs
+            </span>
+          </Link>
         </div>
 
-        {/* Floor Plan Column */}
-        <div>
+        {/* Floor Plan */}
+        <div className="md:justify-self-end">
           <h4 className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#3FD8F0]">
             The Floor Plan
           </h4>
@@ -59,31 +68,6 @@ export default function SiteFooter() {
             <li>
               <Link href="/#gift-shop" className="rounded text-white/70 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3FD8F0]">
                 Gift Shop (mandatory)
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Visitor Information Column */}
-        <div>
-          <h4 className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#3FD8F0]">
-            Visitor Information
-          </h4>
-          <ul className="mt-6 space-y-4 text-sm">
-            <li>
-              <span className="mb-1 block text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">
-                The Institution
-              </span>
-              <Link href="/about" className="rounded font-medium text-white/70 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3FD8F0]">
-                About Stickerology
-              </Link>
-            </li>
-            <li>
-              <span className="mb-1 block text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">
-                Commissions &amp; Bespoke
-              </span>
-              <Link href="/contact" className="rounded font-medium text-white/70 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3FD8F0]">
-                Contact us via order form
               </Link>
             </li>
           </ul>

@@ -12,7 +12,6 @@ const NAV = [
   { href: "/", label: "Home" },
   { href: "/#wing", label: "The Emotion Wing" },
   { href: "/#packs", label: "The Collections" },
-  { href: "/about", label: "About" },
 ];
 
 export default function SiteHeader() {
@@ -72,13 +71,13 @@ export default function SiteHeader() {
               </Link>
             ))}
             <Link
-              href="/contact"
+              href="/#packs"
               className="ml-1 rounded-full bg-white p-[4px] transition-transform hover:scale-105 active:translate-y-[2px] active:scale-95 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#3FD8F0]"
             >
               <span
                 className={`${fredoka.className} block rounded-full border-2 border-black bg-[linear-gradient(105deg,#FF2D95,#8B2FE0_55%,#2F9BFF)] px-5 py-2 text-sm font-semibold normal-case tracking-normal text-white`}
               >
-                Order
+                Browse packs
               </span>
             </Link>
           </nav>
@@ -115,14 +114,14 @@ export default function SiteHeader() {
               </Link>
             ))}
             <Link
-              href="/contact"
+              href="/#packs"
               className="mt-6 rounded-full bg-white p-[4px] text-center active:translate-y-[2px]"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <span
                 className={`${fredoka.className} block rounded-full border-2 border-black bg-[linear-gradient(105deg,#FF2D95,#8B2FE0_55%,#2F9BFF)] py-3 text-sm font-semibold normal-case tracking-normal text-white`}
               >
-                Order Now
+                Browse packs
               </span>
             </Link>
           </nav>
