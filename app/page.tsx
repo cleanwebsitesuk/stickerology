@@ -172,7 +172,7 @@ function Reveal({
 ---------------------------------------------------------------- */
 const TABS = [
   "Joy", "Rage", "Dread", "Awe", "Smug", "Cringe",
-  "Longing", "Relief", "Spite", "Chaos", "Delulu", "Unbothered",
+  "Longing", "Relief", "Spite", "Chaos", "Unbothered",
 ] as const;
 type Tab = (typeof TABS)[number];
 
@@ -236,12 +236,6 @@ const WINGS: Record<Tab, { emoji: string; num: string; name: string; hot?: boole
     { emoji: "🎲", num: "0910", name: "'Let's Find Out'", hot: true },
     { emoji: "🧨", num: "0918", name: "One More Episode (It Is 3 AM)" },
     { emoji: "🌀", num: "0927", name: "Cart Has 47 Items. Buying None." },
-  ],
-  Delulu: [
-    { emoji: "🥰", num: "1001", name: "They Viewed My Story, So Basically Dating", hot: true },
-    { emoji: "👑", num: "1009", name: "I Can Fix Him" },
-    { emoji: "🔮", num: "1017", name: "Manifesting Instead of Studying" },
-    { emoji: "🦄", num: "1025", name: "This Time Will Be Different" },
   ],
   Unbothered: [
     { emoji: "😌", num: "1101", name: "Read Your Paragraph. Replied 'K.'" },
@@ -670,8 +664,8 @@ export default function Page() {
             </div>
 
             <p className="mt-10 text-sm text-white/50">
-              Room {String(TABS.indexOf(tab) + 1).padStart(2, "0")} of 12 · {tab} · four specimens
-              currently on display, 196 in storage
+              Room {String(TABS.indexOf(tab) + 1).padStart(2, "0")} of {TABS.length} · {tab} · four
+              specimens currently on display, 196 in storage
             </p>
           </div>
         </section>
@@ -841,54 +835,6 @@ export default function Page() {
         </section>
       </main>
 
-      {/* ============================================================
-          FOOTER
-      ============================================================ */}
-      <footer className="border-t border-white/10 bg-[#070A20] py-14">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-6 text-center md:flex-row md:justify-between md:text-left">
-          <div className="flex items-center gap-4">
-            {/* circular logo mark, rebuilt in CSS */}
-            <div aria-hidden="true" className="relative h-14 w-14 rounded-full bg-white p-[4px] shadow-lg">
-              <div
-                className={`${fredoka.className} flex h-full w-full items-center justify-center rounded-full border-2 border-black bg-[linear-gradient(130deg,#FF2D95,#8B2FE0_55%,#2F9BFF)] text-2xl font-semibold text-white`}
-              >
-                S
-              </div>
-              <div
-                className="absolute bottom-0.5 right-0.5 h-3.5 w-3.5"
-                style={{
-                  clipPath: "polygon(100% 0, 0 100%, 100% 100%)",
-                  background: "linear-gradient(135deg,#fff,#cfcbe2)",
-                }}
-              />
-            </div>
-            <div>
-              <div className={`${fredoka.className} text-xl font-semibold`}>Stickerology</div>
-              <div className="text-[10px] font-semibold uppercase tracking-[0.24em] text-white/50">
-                Stick it. Share it. Express it.
-              </div>
-            </div>
-          </div>
-
-          <div className="max-w-sm space-y-2 text-[13px] leading-relaxed text-white/55">
-            <p>No stickers were harmed in the mounting process. Several were emotionally validated.</p>
-            <p>Open 24 hours. The internet does not observe public holidays.</p>
-            <p>© 2026 Stickerology, a very serious institution. Est. whenever you first felt something.</p>
-          </div>
-
-          <nav aria-label="Footer" className={`${fredoka.className} flex flex-col gap-2 text-[15px] font-medium`}>
-            <a href="#packs" className="rounded text-white/70 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3FD8F0]">
-              The Collections
-            </a>
-            <a href="#wing" className="rounded text-white/70 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3FD8F0]">
-              The Emotion Wing
-            </a>
-            <a href="#gift-shop" className="rounded text-white/70 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3FD8F0]">
-              Gift Shop (mandatory)
-            </a>
-          </nav>
-        </div>
-      </footer>
     </div>
   );
 }
