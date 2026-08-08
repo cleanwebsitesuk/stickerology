@@ -301,7 +301,7 @@ const MARQUEE = [
    Chat demo script
 ---------------------------------------------------------------- */
 type Msg =
-  | { side: "left" | "right"; text: string; sticker?: undefined }
+  | { side: "left" | "right"; text: string; sticker?: undefined; num?: undefined }
   | { side: "left" | "right"; sticker: string; num: string; text?: undefined };
 
 const SCRIPT: Msg[] = [
@@ -397,7 +397,9 @@ function ChatDemo() {
                     </div>
                   ) : (
                     <div className="relative px-2 py-1">
-                      <Sticker size={62} rotate={m.side === "right" ? 5 : -5} drag={false} label={`SPEC. ${m.num}`} />
+                      <Sticker size={62} rotate={m.side === "right" ? 5 : -5} drag={false} label={`SPEC. ${m.num}`}>
+                        {m.sticker}
+                      </Sticker>
                       {!reduce && <SparkleBurst />}
                     </div>
                   )}
