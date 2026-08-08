@@ -55,7 +55,7 @@ export default function SiteHeader() {
                 Stickerology
               </span>
               <span className="mt-1 hidden text-[9px] font-semibold uppercase tracking-[0.24em] text-[#3FD8F0] sm:block">
-                A very serious institution
+                Stick it. Share it. Express it.
               </span>
             </span>
           </Link>
